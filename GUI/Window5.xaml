@@ -1,0 +1,27 @@
+﻿<Window x:Class="GUI.Window5"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="Window5" Height="450" Width="800" Background="#545d6a">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="51" TextWrapping="Wrap" Text="Nazwa projektu" VerticalAlignment="Top" Width="256" Margin="75,79,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="51" TextWrapping="Wrap" Text="Opis projektu&#xD;&#xA;" VerticalAlignment="Top" Width="256" Margin="75,139,0,0"/>
+        <ListBox HorizontalAlignment="Left" Height="67" VerticalAlignment="Top" Width="256" Margin="75,232,0,0"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="96,315,0,0" Click="Button_Click"/>
+        <Button Content="Usuń" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="213,315,0,0"/>
+        <ListBox HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="250" Margin="444,79,0,0"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="472,153,0,0" Click="Button_Click"/>
+        <Button Content="Usuń" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="586,153,0,0"/>
+        <ListBox HorizontalAlignment="Left" Height="51" VerticalAlignment="Top" Width="250" Margin="444,232,0,0"/>
+        <Button Content="Dodaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="472,300,0,0" Click="Button_Click"/>
+        <Button Content="Usuń" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="586,300,0,0"/>
+        <Label Content="Nowy projekt&#xD;&#xA;" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,23,0,0"/>
+        <Label Content="Sponsorzy&#xA;" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="444,23,0,0"/>
+        <Label Content="Pracownicy&#xD;&#xA;&#xA;" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,190,0,0" Height="37"/>
+        <Label Content="Zadania&#xD;&#xA;&#xA;" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="444,190,0,0" Height="37" Width="78"/>
+
+    </Grid>
+</Window>

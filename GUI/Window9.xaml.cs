@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace GUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy MainWindow.xaml
+    /// Logika interakcji dla klasy Window9.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Window9 : Window
     {
-        public MainWindow()
+        public Window9()
         {
             InitializeComponent();
         }

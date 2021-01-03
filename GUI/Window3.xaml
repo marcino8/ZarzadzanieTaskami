@@ -1,0 +1,18 @@
+﻿<Window x:Class="GUI.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="Window3" Height="450" Width="800" Background="#545d6a">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Stwórz nowy projekt&#xD;&#xA;" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="296" Margin="224,130,0,0" Height="33"/>
+        <Button Content="Przeglądaj aktualne projekty&#xA;" FontSize="18" Margin="224,180,0,206" HorizontalAlignment="Left" Width="296"/>
+        <Button Content="Otwórz archiwum projektów&#xA;" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="296" Margin="224,230,0,0" Height="33"/>
+
+    </Grid>
+</Window>
