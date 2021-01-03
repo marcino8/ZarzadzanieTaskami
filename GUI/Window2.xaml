@@ -8,16 +8,21 @@
         Title="Window2" Height="450" Width="800" Background="#545d6a">
     <Grid>
         <Label Content="       Tworzenie konta&#xD;&#xA;" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Center" FontSize="38" FontWeight="Bold" Margin="157,28,167,0" Height="70" Width="468"/>
-        <TextBox HorizontalAlignment="Left" Margin="262,118,0,0" VerticalAlignment="Top" Width="350" Height="35"  />
-        <Label Foreground="White" FontSize="18" Content="Imię&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,118,0,0" Height="35" Width="100"/>
-        <TextBox HorizontalAlignment="Left" Margin="262,158,0,0" VerticalAlignment="Top" Width="350" Height="35"/>
-        <Label Foreground="White" FontSize="18" Content="Nazwisko&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,158,0,0" Height="35" Width="100"/>
-        <TextBox HorizontalAlignment="Left" Margin="262,198,0,0" VerticalAlignment="Top" Width="350" Height="35"/>
-        <Label Foreground="White" FontSize="18" Content="Pesel&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,198,0,0" Height="35" Width="100"/>
-        <TextBox HorizontalAlignment="Left" Margin="262,238,0,0" VerticalAlignment="Top" Width="350" Height="35"/>
-        <Label Foreground="White" FontSize="18" Content="Email&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,238,0,0" Height="35" Width="100"/>
-        <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" Width="350" Margin="262,278,0,0" Height="35" SelectionChanged="ComboBox_SelectionChanged"/>
-        <Label Foreground="White" FontSize="18" Content="ComboBox&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,278,0,0" Height="35" Width="100"/>
+        <TextBox x:Name="imieBox" FontSize="14" Padding="2, 7" Height="36" HorizontalAlignment="Left" Margin="262,118,0,0" VerticalAlignment="Top" Width="350"  />
+        <Label Foreground="White" FontSize="18" Content="Imię&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,118,0,0" Height="34" Width="100"/>
+        <TextBox x:Name="nazwiskoBox" FontSize="14" Padding="2, 7" Height="36" HorizontalAlignment="Left" Margin="262,158,0,0" VerticalAlignment="Top" Width="350"/>
+        <Label Foreground="White" FontSize="18" Content="Nazwisko&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,158,0,0" Height="34" Width="100"/>
+        <TextBox x:Name="peselBox" FontSize="14" Padding="2, 7" Height="36" HorizontalAlignment="Left" Margin="262,198,0,0" VerticalAlignment="Top" Width="350" />
+        <Label Foreground="White" FontSize="18" Content="Pesel&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,198,0,0" Height="34" Width="100"/>
+        <TextBox x:Name="emailBox" FontSize="14" Padding="2, 7" Height="36" HorizontalAlignment="Left" Margin="262,238,0,0" VerticalAlignment="Top" Width="350"/>
+        <Label Foreground="White" FontSize="18" Height="34" Content="Email&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,238,0,0" Width="100"/>
+        <ComboBox x:Name="listaCombo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="350" Margin="262,278,0,0" Height="36" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="Pracownik"/>
+            <ComboBoxItem Content="Sponsor"/>
+            <ComboBoxItem Content="Manager"/>
+        </ComboBox>
+        <Label Foreground="White" FontSize="18" Content="ComboBox&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,278,0,0" Height="34" Width="100"/>
+        <Rectangle Fill="White" Opacity="0.9" HorizontalAlignment="Left" Height="2" VerticalAlignment="Top" Width="498" Margin="140,96,0,0"/>
 
     </Grid>
 </Window>

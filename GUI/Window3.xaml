@@ -10,9 +10,10 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Button Content="Stwórz nowy projekt&#xD;&#xA;" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="296" Margin="224,130,0,0" Height="33"/>
-        <Button Content="Przeglądaj aktualne projekty&#xA;" FontSize="18" Margin="224,180,0,206" HorizontalAlignment="Left" Width="296"/>
-        <Button Content="Otwórz archiwum projektów&#xA;" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="296" Margin="224,230,0,0" Height="33"/>
+
+        <Button x:Name="nowyButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Stwórz nowy projekt&#xD;&#xA;" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="296" Margin="240,100,0,0" />
+        <Button x:Name="aktualneButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Przeglądaj aktualne projekty&#xA;" FontSize="16" Margin="240,180,0,205" HorizontalAlignment="Left" Width="296"/>
+        <Button x:Name="archiwumButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Otwórz archiwum projektów&#xA;" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="296" Margin="240,260,0,0" />
 
     </Grid>
 </Window>

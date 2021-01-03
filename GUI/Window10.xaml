@@ -7,12 +7,13 @@
         mc:Ignorable="d"
         Title="Window10" Height="450" Width="800" Background="#545d6a">
     <Grid>
-        <ListBox HorizontalAlignment="Left" Height="94" VerticalAlignment="Top" Width="295" Margin="79,67,0,0"/>
-        <Button Content="Wybierz" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="79,294,0,0" Click="Button_Click"/>
-        <Button Content="Usuń" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="299,294,0,0" Click="Button_Click"/>
-        <Label Content="Wszyscy pracownicy&#xD;&#xA;&#xA;" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,24,0,0" Height="38"/>
-        <ListBox HorizontalAlignment="Left" Height="94" VerticalAlignment="Top" Width="295" Margin="427,67,0,0"/>
-        <Label Content="Aktualny projekt&#xD;&#xA;&#xA;" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="433,24,0,0" Height="38"/>
+        <ListBox HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="256" Margin="91,91,0,0"/>
+        <Label Foreground="White" FontSize="18" Height="34" Content="Wszyscy pracownicy&#xD;&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="91,48,0,0" Width="256
+               "/>
+        <ListBox HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="256" Margin="439,91,0,0"/>
+        <Label Foreground="White" FontSize="18" Height="34" Content="Aktualny projekt&#xD;&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="439,48,0,0" Width="256" />
+        <Button x:Name="dodajButton" Content="Dodaj" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="116,309,0,0" Click="Button_Click"/>
+        <Button x:Name="usunButton" Content="Usuń" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="236,309,0,0"/>
 
     </Grid>
 </Window>
