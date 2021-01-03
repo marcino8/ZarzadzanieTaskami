@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Window10" Height="450" Width="800">
+        Title="Window10" Height="450" Width="800" Background="#545d6a">
     <Grid>
-        
+        <ListBox HorizontalAlignment="Left" Height="94" VerticalAlignment="Top" Width="295" Margin="79,67,0,0"/>
+        <Button Content="Wybierz" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="79,294,0,0" Click="Button_Click"/>
+        <Button Content="Usuń" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="299,294,0,0" Click="Button_Click"/>
+        <Label Content="Wszyscy pracownicy&#xD;&#xA;&#xA;" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,24,0,0" Height="38"/>
+        <ListBox HorizontalAlignment="Left" Height="94" VerticalAlignment="Top" Width="295" Margin="427,67,0,0"/>
+        <Label Content="Aktualny projekt&#xD;&#xA;&#xA;" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="433,24,0,0" Height="38"/>
+
     </Grid>
 </Window>

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Window7" Height="450" Width="800" Background="#545d6a">
     <Grid>
-        <ListBox HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="270" Margin="88,43,0,0"/>
+        <ListBox HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="270" Margin="91,43,0,0"/>
         <ListBox HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="282" Margin="432,43,0,0"/>
 
     </Grid>
