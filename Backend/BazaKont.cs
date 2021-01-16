@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
+
+
 
 namespace Backend
 {
+    [Serializable]
     public class BazaKont
     {
         List<Konto> lista_kont;
@@ -19,9 +24,9 @@ namespace Backend
             return null;
         }
 
-        static void Zapisz_Baze()
+        static void Zapisz_Baze(string nazwaPliku)
         {
-            
+            XmlSerializer xmls = new XmlSerializer(typeof(BazaKont));
         }
 
         public void DodajDoBazy()

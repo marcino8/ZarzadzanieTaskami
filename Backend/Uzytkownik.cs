@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Backend
 {
+    [Serializable]
+    [XmlInclude(typeof(Pracownik))]
+    [XmlInclude(typeof(Manager))]
+    [XmlInclude(typeof(Sponsor))]
+
     public abstract class Uzytkownik
     {
         string _imie;

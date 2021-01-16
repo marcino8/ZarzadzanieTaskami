@@ -7,6 +7,7 @@ using static Backend.Enumy;
 
 namespace Backend
 {
+    [Serializable]
     public class Zadanie
     {
         DateTime _czasRozpoczecia;
