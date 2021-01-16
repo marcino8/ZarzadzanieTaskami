@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Backend;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,8 +20,10 @@ namespace GUI
     /// </summary>
     public partial class Window4 : Window
     {
-        public Window4()
+        Uzytkownik uzytkownik;
+        public Window4(Uzytkownik u)
         {
+            uzytkownik = u;
             InitializeComponent();
         }
     }

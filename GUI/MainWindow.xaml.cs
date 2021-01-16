@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Backend;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,6 +39,42 @@ namespace GUI
         {
             Window w = new Window2();
             w.ShowDialog();
+        }
+
+        private void zalogujButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (loginBox.Text != "" &&
+                passwordBox.Password != "")
+            {
+                //Sprawdz czy konto istnieje
+                BazaKont b = BazaKont.Wczytaj_Baze();
+                if (b.SprawdzKonto(loginBox.Text, passwordBox.Password))
+                {
+                    //zaloguj
+                    this.Hide();
+                    switch(b.SprawdzKto(loginBox.Text, passwordBox.Password))
+                    {
+                        case 1:
+                            Window w1 = new Window4(b.wyciagnijUzytkownika(loginBox.Text, passwordBox.Password));
+                            w1.Show();
+                            break;
+                        case 2:
+                            Window w2 = new Window4(b.wyciagnijUzytkownika(loginBox.Text, passwordBox.Password));
+                            w2.Show();
+                            break;
+                        case 3:
+                            Window w3 = new Window3(b.wyciagnijUzytkownika(loginBox.Text, passwordBox.Password));
+                            w3.Show();
+                            break;
+                        default:
+                            MessageBox.Show("Cos poszlo nie tak");
+                            break;
+                    }
+                        
+                }
+                else
+                    MessageBox.Show("Niepoprawny login lub haslo");
+            }
         }
     }
 }

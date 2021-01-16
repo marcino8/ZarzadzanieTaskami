@@ -61,11 +61,33 @@ namespace Backend
             return lista_kont.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password));
         }
 
+        public Uzytkownik wyciagnijUzytkownika(string login, string password)
+        {
+            if(SprawdzKonto(login, password))
+            {
+                return lista_kont.First(k => k.Login.Equals(login) && k.Haslo.Equals(password)).Uzytkownik;
+            }
+            return null;
+        }
+
         //przetestowac
         public List<Konto> wybierzKonta(Uzytkownik u)
         {
             return lista_kont.Where(k => k.Uzytkownik.GetType().Equals(u.GetType())).ToList();
         }
-
+         public int SprawdzKto(string login, string haslo)
+        {
+            if (SprawdzKonto(login, haslo))
+            {
+                Uzytkownik u = lista_kont.First(k => k.Login.Equals(login) && k.Haslo.Equals(haslo)).Uzytkownik;
+                if (u is Pracownik)
+                    return 1; //Pracownik
+                if (u is Sponsor)
+                    return 2; //Sponsor
+                else
+                    return 3; //Manager
+            }
+            return -1;
+        }
     }
 }
