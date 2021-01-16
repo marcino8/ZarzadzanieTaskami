@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    class ArchiwumProjektow
+    class LiveChat
     {
-        List<Projekt> zakonczoneProjekty
-        {
-
-        }
     }
 }

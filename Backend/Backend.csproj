@@ -38,7 +38,9 @@
   <ItemGroup>
     <Compile Include="ArchiwumProjektow.cs" />
     <Compile Include="BazaKont.cs" />
+    <Compile Include="Enumy.cs" />
     <Compile Include="Konto.cs" />
+    <Compile Include="LiveChat.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Pracownik.cs" />
     <Compile Include="Projekt.cs" />

@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    class ArchiwumProjektow
+    class Enumy
     {
-        List<Projekt> zakonczoneProjekty
+        public enum WaznoscZadania
         {
-
+            Mało_istotne = 1,
+            Istotne = 2,
+            Ważne=3,
+            Krytycznie_ważne=4
         }
     }
 }

@@ -22,7 +22,5 @@ namespace Backend
             _login = login;
             _haslo = haslo;
         }
-
-        //TODO: ZAPIS DO PLIKU PO UTWORZENIU NOWEGO KONTA
     }
 }

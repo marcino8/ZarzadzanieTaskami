@@ -8,6 +8,5 @@ namespace Backend
 {
     class Manager : Uzytkownik
     {
-        List<Projekt> _aktywneProjekty;
     }
 }
