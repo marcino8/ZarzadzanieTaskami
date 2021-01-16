@@ -11,12 +11,15 @@ namespace Backend
     {
         Uzytkownik _uzytkownik;
         string _login;
-        readonly string _haslo;
+        string _haslo;
 
         public string Login { get => _login; set => _login = value; }
-        public string Haslo { get => _haslo; }
+        public string Haslo { get => _haslo; set => _haslo = value; }
         public Uzytkownik Uzytkownik { get => _uzytkownik; set => _uzytkownik = value; }
+        public Konto()
+        {
 
+        }
         public Konto(Uzytkownik uzytkownik, string login, string haslo)
         {
             _uzytkownik = uzytkownik;
@@ -28,5 +31,6 @@ namespace Backend
         {
             return $"login: {_login}\n"+_uzytkownik.ToString();
         }
+
     }
 }

@@ -18,23 +18,25 @@ namespace Backend
             this.zakonczoneProjekty = new List<Projekt>();
         }
 
+        public List<Projekt> ZakonczoneProjekty { get => zakonczoneProjekty; set => zakonczoneProjekty = value; }
+
         public static ArchiwumProjektow WczytajArchiwum()
         {
             ArchiwumProjektow b = new ArchiwumProjektow();
-            XmlSerializer bf = new XmlSerializer(typeof(BazaKont));
+            XmlSerializer bf = new XmlSerializer(typeof(List<Projekt>));
             using (StreamReader sw = new StreamReader("Archiwum.xml"))
             {
-                b = (ArchiwumProjektow)(bf.Deserialize(sw));
+                b.zakonczoneProjekty = (List<Projekt>)(bf.Deserialize(sw));
             }
             return b;
         }
 
-        public void Zapisz()
+        public void ZapiszArchiwum()
         {
-            XmlSerializer bf = new XmlSerializer(typeof(ArchiwumProjektow));
+            XmlSerializer bf = new XmlSerializer(typeof(List<Projekt>));
             using (StreamWriter sw = new StreamWriter("Archiwum.xml"))
             {
-                bf.Serialize(sw, this);
+                bf.Serialize(sw, this.zakonczoneProjekty);
             }
         }
     }

@@ -28,14 +28,29 @@ namespace Backend
         public List<Pracownik> ListaPracownikow { get => listaPracownikow; set => listaPracownikow = value; }
         public List<Sponsor> ListaSponsorow { get => listaSponsorow; set => listaSponsorow = value; }
 
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(var x in ListaZadan)
+            {
+                sb.Append(x.toShortString());
+            }
+
+            return $"Temat: {nazwa}\n" +
+                $"Opis: {opis}\n" +
+                $"Manager: {manager.toShortString()}\n" +
+                $"Zadania:\n" + sb.ToString();
+        }
+
         public Projekt()
         {
             this.listaZadan = new List<Zadanie>();
             this.wykonaneZadania = new List<Zadanie>();
             this.listaPracownikow = new List<Pracownik>();
+            this.listaSponsorow = new List<Sponsor>();
         }
 
-        public Projekt(Manager manager)
+        public Projekt(Manager manager):this()
         {
             this.manager = manager;
         }
@@ -59,24 +74,36 @@ namespace Backend
         public void dodajPracownika(Pracownik p )
         {
             listaPracownikow.Add(p);
-            p.Projekty.Add(this);
+        }
+        public void dodajPracownikow(List<Pracownik> p)
+        {
+            foreach(var x in p)
+            {
+                listaPracownikow.Add(x);
+            }
+
         }
 
         public void usunPracownika(Pracownik p)
         {
             listaPracownikow.Remove(p);
-            p.Projekty.Remove(this);
         }
 
         public void dodajSponsora(Sponsor s)
         {
             listaSponsorow.Add(s);
-            s.Projekty.Add(this);
+        }
+        public void dodajSponsorow(List<Sponsor> p)
+        {
+            foreach (var x in p)
+            {
+                listaSponsorow.Add(x);
+            }
+
         }
         public void usunSponsora(Sponsor s)
         {
             listaSponsorow.Remove(s);
-            s.Projekty.Remove(this);
         }
 
         public List<Zadanie> zadaniaPracownika(Pracownik p)

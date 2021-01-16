@@ -13,6 +13,10 @@ namespace Backend
         {
             return base.ToString() + " PRACOWNIK";
         }
+        public Pracownik()
+        {
+
+        }
         public Pracownik(string imie, string nazwisko, string dataUrodzenia, string pesel, string email) : base(imie, nazwisko, dataUrodzenia, pesel, email)
         {
             

@@ -7,3 +7,6 @@ C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\obj\Debug\Backend.cspro
 C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
 C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\obj\Debug\Backend.exe
 C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\obj\Debug\Backend.pdb
+C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\bin\Debug\Newtonsoft.Json.dll
+C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\bin\Debug\Newtonsoft.Json.xml
+C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\obj\Debug\Backend.csproj.CopyComplete

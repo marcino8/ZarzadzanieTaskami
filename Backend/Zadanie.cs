@@ -52,7 +52,10 @@ namespace Backend
             _uwagi = uwagi;
             _waznoscZadania = waznoscZadania;
         }
-
+        public string toShortString()
+        {
+            return $"temat: {Temat}, tresc: {Tresc}, \n";
+        }
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

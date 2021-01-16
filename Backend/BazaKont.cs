@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -19,28 +20,30 @@ namespace Backend
             this.lista_kont = new List<Konto>();
         }
 
-        public static BazaKont Wczytaj_Baze(string nazwaPliku)
+        public static BazaKont Wczytaj_Baze()
         {
-            if (!File.Exists(nazwaPliku))
+            if (!File.Exists("userbase.xml"))
             {
                 throw new FileNotFoundException();
             }
-            BazaKont b  = new BazaKont();
-            XmlSerializer bf = new XmlSerializer(typeof(BazaKont));
-            using (StreamReader sw = new StreamReader(nazwaPliku))
+            BazaKont b = new BazaKont();
+            XmlSerializer bf = new XmlSerializer(typeof(List<Konto>));
+            using (StreamReader sr = new StreamReader("userbase.xml"))
             {
-                b = (BazaKont)(bf.Deserialize(sw));
+                b.lista_kont = (List<Konto>)(bf.Deserialize(sr));
             }
             return b;
         }
 
-        public void Zapisz_Baze(string nazwaPliku)
+        public void Zapisz_Baze()
         {
-            XmlSerializer xmls = new XmlSerializer(typeof(BazaKont));
-            using (StreamWriter sw = new StreamWriter(nazwaPliku))
+
+            XmlSerializer bf = new XmlSerializer(typeof(List<Konto>));
+            using (StreamWriter sw = new StreamWriter("userbase.xml"))
             {
-                xmls.Serialize(sw, this);
+                bf.Serialize(sw, this.lista_kont);
             }
+
         }
 
         public void DodajDoBazy(Konto k)
@@ -62,6 +65,7 @@ namespace Backend
         public List<Konto> wybierzKonta(Uzytkownik u)
         {
             return lista_kont.Where(k => k.Uzytkownik.GetType().Equals(u.GetType())).ToList();
-        } 
+        }
+
     }
 }

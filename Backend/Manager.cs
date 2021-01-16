@@ -17,5 +17,9 @@ namespace Backend
         {
 
         }
+        public Manager()
+        {
+
+        }
     }
 }

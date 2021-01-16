@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,6 +46,44 @@ namespace Backend
             Console.WriteLine(z1);
             Console.WriteLine(z2);
             Console.WriteLine(z3);
+            Console.WriteLine();
+            Projekt p = new Projekt("Test", "testowy proj", m2);
+            p.dodajZadanie(z1);
+            p.dodajZadanie(z2);
+            p.dodajZadanie(z3);
+            p.dodajSponsora(s1);
+            Console.WriteLine(p.ToString());
+
+            BazaKont mainbase = new BazaKont();
+            Konto k1 = new Konto(p1, "mama", "tata");
+            Konto k2 = new Konto(p2, "siostra", "brat");
+            Konto k3 = new Konto(s1, "tygrysek", "puchatek");
+            mainbase.DodajDoBazy(k1);
+            mainbase.DodajDoBazy(k2);
+            mainbase.DodajDoBazy(k3);
+
+
+            foreach(var x in mainbase.wybierzKonta(new Pracownik()))
+            {
+                Console.WriteLine(x.Uzytkownik.toShortString());
+            }
+            foreach (var x in mainbase.wybierzKonta(new Sponsor()))
+            {
+                Console.WriteLine(x.Uzytkownik.toShortString());
+            }
+
+            mainbase.Zapisz_Baze(); 
+
+            BazaKont b2 = BazaKont.Wczytaj_Baze();
+            List<Konto> list = b2.wybierzKonta(new Pracownik());
+            foreach (var x in list)
+            {
+                Console.WriteLine(x.Uzytkownik.toShortString());
+            }
+            
+            Console.WriteLine(b2.SprawdzKonto("tygrysek", "puchatek")); 
+
+
 
             Console.ReadKey();
         }

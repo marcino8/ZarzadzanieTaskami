@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKonto xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Konto>
+    <Login>mama</Login>
+    <Haslo>tata</Haslo>
+    <Uzytkownik xsi:type="Pracownik">
+      <Imie>Kornelia</Imie>
+      <Nazwisko>Kłopecka</Nazwisko>
+      <DataUrodzenia>2000-10-10T00:00:00</DataUrodzenia>
+      <Pesel>99900022211</Pesel>
+      <Email>korneliakl@gmail.com</Email>
+    </Uzytkownik>
+  </Konto>
+  <Konto>
+    <Login>siostra</Login>
+    <Haslo>brat</Haslo>
+    <Uzytkownik xsi:type="Pracownik">
+      <Imie>Jola</Imie>
+      <Nazwisko>Pront</Nazwisko>
+      <DataUrodzenia>2010-01-10T00:00:00</DataUrodzenia>
+      <Pesel>99111154611</Pesel>
+      <Email>jopr@gmail.com</Email>
+    </Uzytkownik>
+  </Konto>
+  <Konto>
+    <Login>tygrysek</Login>
+    <Haslo>puchatek</Haslo>
+    <Uzytkownik xsi:type="Sponsor">
+      <Imie>Zuzanna</Imie>
+      <Nazwisko>Szewczyk</Nazwisko>
+      <DataUrodzenia>1989-12-12T00:00:00</DataUrodzenia>
+      <Pesel>99901122314</Pesel>
+      <Email>sponsoruje@gmail.com</Email>
+    </Uzytkownik>
+  </Konto>
+</ArrayOfKonto>
