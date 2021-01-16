@@ -8,5 +8,9 @@ namespace Backend
 {
     public class Pracownik : Uzytkownik
     {
+        public override string ToString()
+        {
+            return base.ToString() + " PRACOWNIK";
+        }
     }
 }

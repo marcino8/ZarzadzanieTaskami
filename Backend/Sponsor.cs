@@ -8,6 +8,9 @@ namespace Backend
 {
     public class Sponsor : Uzytkownik
     {
-
+        public override string ToString()
+        {
+            return base.ToString()+ " SPONSOR";
+        }
     }
 }

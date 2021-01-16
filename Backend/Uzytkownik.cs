@@ -35,5 +35,11 @@ namespace Backend
             _email = email;
             _projekty = new List<Projekt>();
         }
+
+        public override string ToString()
+        {
+            return $"{_imie} {_nazwisko}, data urodzenia: {_dataUrodzenia.ToShortDateString()} " +
+                $"pesel: {_pesel}, email: {_email}";
+        }
     }
 }

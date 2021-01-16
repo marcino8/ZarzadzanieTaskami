@@ -22,5 +22,10 @@ namespace Backend
             _login = login;
             _haslo = haslo;
         }
+
+        public override string ToString()
+        {
+            return $"login: {_login}\n"+_uzytkownik.ToString();
+        }
     }
 }

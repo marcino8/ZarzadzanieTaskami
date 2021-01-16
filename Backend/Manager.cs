@@ -8,5 +8,9 @@ namespace Backend
 {
     public class Manager : Uzytkownik
     {
+        public override string ToString()
+        {
+            return base.ToString() + " MANAGER";
+        }
     }
 }

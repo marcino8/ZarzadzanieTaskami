@@ -13,5 +13,19 @@ namespace Backend
 
         public string Tresc { get => _tresc; set => _tresc = value; }
         public Uzytkownik Zglaszajacy { get => _zglaszajacy; set => _zglaszajacy = value; }
+
+        public Uwaga()
+        {
+        }
+        public Uwaga(string tresc, Uzytkownik zglaszajacy)
+        {
+            _tresc = tresc;
+            _zglaszajacy = zglaszajacy;
+        }
+
+        public override string ToString()
+        {
+            return $"Zgłaszający: {_zglaszajacy.Imie} {_zglaszajacy.Nazwisko}";
+        }
     }
 }
