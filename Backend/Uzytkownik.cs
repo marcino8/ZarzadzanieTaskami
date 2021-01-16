@@ -12,7 +12,7 @@ namespace Backend
     [XmlInclude(typeof(Manager))]
     [XmlInclude(typeof(Sponsor))]
 
-    public abstract class Uzytkownik
+    public abstract class Uzytkownik 
     {
         string _imie;
         string _nazwisko;
@@ -47,5 +47,6 @@ namespace Backend
             return $"{_imie} {_nazwisko}, data urodzenia: {_dataUrodzenia.ToShortDateString()} " +
                 $"pesel: {_pesel}, email: {_email}";
         }
+
     }
 }

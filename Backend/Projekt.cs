@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Backend
 {
     [Serializable]
-    public class Projekt
+    public class Projekt : ICloneable
     {
         string nazwa;
         string opis;
@@ -59,23 +59,65 @@ namespace Backend
         public void dodajPracownika(Pracownik p )
         {
             listaPracownikow.Add(p);
+            p.Projekty.Add(this);
         }
 
         public void usunPracownika(Pracownik p)
         {
             listaPracownikow.Remove(p);
+            p.Projekty.Remove(this);
         }
 
         public void dodajSponsora(Sponsor s)
         {
             listaSponsorow.Add(s);
+            s.Projekty.Add(this);
         }
         public void usunSponsora(Sponsor s)
         {
             listaSponsorow.Remove(s);
+            s.Projekty.Remove(this);
         }
 
+        public List<Zadanie> zadaniaPracownika(Pracownik p)
+        {
+            return listaZadan.Where(z => z.Wykonawcy.Contains(p)).ToList();
+        }
+        
+        public static void sortujZadania(List<Zadanie> zadania)
+        {
+            zadania.Sort();
+        }
 
+        public object Clone()
+        {
+            Projekt p = new Projekt();
+            List<Zadanie> z1 = new List<Zadanie>();
+            List<Pracownik> p1 = new List<Pracownik>();
+            List<Sponsor> s1 = new List<Sponsor>();
+            //Uwaga: Przy ludziach, nie klonujemy ich jako nowe obiekty
+            p.Nazwa = nazwa;
+            p.Manager = manager;
+            p.Opis = opis;
 
+            
+            foreach(var x in listaPracownikow)
+            {
+                p1.Add(x);
+            }
+            foreach (var x in listaSponsorow)
+            {
+                s1.Add(x);
+            }
+            foreach (var x in listaZadan)
+            {
+                z1.Add(x);
+            }
+            p.ListaZadan = z1;
+            p.listaSponsorow = s1;
+            p.listaPracownikow = p1;
+
+            return p;
+        }
     }
 }

@@ -19,34 +19,49 @@ namespace Backend
             this.lista_kont = new List<Konto>();
         }
 
-        static BazaKont Wczytaj_Baze()
+        public static BazaKont Wczytaj_Baze(string nazwaPliku)
         {
-            return null;
+            if (!File.Exists(nazwaPliku))
+            {
+                throw new FileNotFoundException();
+            }
+            BazaKont b  = new BazaKont();
+            XmlSerializer bf = new XmlSerializer(typeof(BazaKont));
+            using (StreamReader sw = new StreamReader(nazwaPliku))
+            {
+                b = (BazaKont)(bf.Deserialize(sw));
+            }
+            return b;
         }
 
-        static void Zapisz_Baze(string nazwaPliku)
+        public void Zapisz_Baze(string nazwaPliku)
         {
             XmlSerializer xmls = new XmlSerializer(typeof(BazaKont));
+            using (StreamWriter sw = new StreamWriter(nazwaPliku))
+            {
+                xmls.Serialize(sw, this);
+            }
         }
 
-        public void DodajDoBazy()
+        public void DodajDoBazy(Konto k)
         {
-
+            lista_kont.Add(k);
         }
 
-        public void UsunZBazy()
+        public void UsunZBazy(Konto k)
         {
-
+            lista_kont.Remove(k);
         }
 
         public bool SprawdzKonto(string login, string password)
         {
-            return true;
+            return lista_kont.Any(k => k.Login.Equals(login) && k.Haslo.Equals(password));
         }
 
-        public List<Konto> wybierzKonta()
+        //przetestowac
+        public List<Konto> wybierzKonta(Uzytkownik u)
         {
-            return null;
+            return lista_kont.Where(k => k.Uzytkownik.GetType().Equals(u.GetType())).ToList();
         } 
     }
 }

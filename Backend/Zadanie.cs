@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ using static Backend.Enumy;
 namespace Backend
 {
     [Serializable]
-    public class Zadanie
+    public class Zadanie : IComparable<Zadanie>
     {
         DateTime _czasRozpoczecia;
         DateTime _czasZakonczenia;
@@ -16,7 +17,7 @@ namespace Backend
         string _tresc;
         bool _wykonane;
         bool _opoznienie;
-        WaznoscZadania waznoscZadania;
+        WaznoscZadania _waznoscZadania;
         List<Pracownik> _wykonawcy;
         List<Uwaga> _uwagi;
 
@@ -33,16 +34,19 @@ namespace Backend
         {
 
         }
-        public Zadanie(DateTime czasRozpoczecia, DateTime czasZakonczenia, string temat, string tresc, List<Pracownik> wykonawcy, List<Uwaga> uwagi)
+        public Zadanie(string czasRozpoczecia, string czasZakonczenia, string temat, string tresc, List<Pracownik> wykonawcy, List<Uwaga> uwagi, WaznoscZadania waznoscZadania)
         {
-            _czasRozpoczecia = czasRozpoczecia;
-            _czasZakonczenia = czasZakonczenia;
+            DateTime.TryParseExact(czasRozpoczecia, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MMM-yy" }
+            , null, DateTimeStyles.None, out this._czasRozpoczecia);
+            DateTime.TryParseExact(czasZakonczenia, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MMM-yy" }
+            , null, DateTimeStyles.None, out this._czasZakonczenia);
             _temat = temat;
             _tresc = tresc;
             _wykonane = false;
             _opoznienie = false;
             _wykonawcy = wykonawcy;
             _uwagi = uwagi;
+            _waznoscZadania = waznoscZadania;
         }
 
         public void dodajUwage(Uwaga u)
@@ -53,6 +57,11 @@ namespace Backend
         public void oznaczJakoZakonczone()
         {
             _wykonane = true;
+        }
+
+        public int CompareTo(Zadanie other)
+        {
+            return CzasZakonczenia.CompareTo(other.CzasZakonczenia);
         }
     }
 }
