@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,11 +33,17 @@ namespace Backend
         {
         }
 
-        public Uzytkownik(string imie, string nazwisko, DateTime dataUrodzenia, string pesel, string email)
+        public Uzytkownik(string imie, string nazwisko, string dataUrodzenia, string pesel, string email)
         {
             _imie = imie;
             _nazwisko = nazwisko;
-            _dataUrodzenia = dataUrodzenia;
+            DateTime.TryParseExact(dataUrodzenia, new[] { 
+                "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MM-yy", "dd.MM.yyyy", "dd-MM-yyyy" }
+            , null, DateTimeStyles.None, out this._dataUrodzenia);
+            if (pesel.Length != 11)
+            {
+                throw new NotAPeselException();
+            }
             _pesel = pesel;
             _email = email;
             _projekty = new List<Projekt>();
@@ -46,6 +53,11 @@ namespace Backend
         {
             return $"{_imie} {_nazwisko}, data urodzenia: {_dataUrodzenia.ToShortDateString()} " +
                 $"pesel: {_pesel}, email: {_email}";
+        }
+
+        public string toShortString()
+        {
+            return $"{_imie} {_nazwisko}";
         }
 
     }

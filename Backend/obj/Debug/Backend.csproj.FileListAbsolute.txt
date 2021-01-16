@@ -1,2 +1,9 @@
 H:\Programowanie obiektowe\ProjektZaliczeniowy\Backend\obj\Debug\Backend.csprojAssemblyReference.cache
 H:\Programowanie obiektowe\ProjektZaliczeniowy\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\bin\Debug\Backend.exe.config
+C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\bin\Debug\Backend.exe
+C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\bin\Debug\Backend.pdb
+C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\obj\Debug\Backend.csprojAssemblyReference.cache
+C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\obj\Debug\Backend.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\obj\Debug\Backend.exe
+C:\Users\user\Documents\GIT\ProjektProgramowanie\Backend\obj\Debug\Backend.pdb

@@ -42,9 +42,12 @@
     <Compile Include="Konto.cs" />
     <Compile Include="LiveChat.cs" />
     <Compile Include="Manager.cs" />
+    <Compile Include="NieprawidloweRamyCzasoweException.cs" />
+    <Compile Include="NotAPeselException.cs" />
     <Compile Include="Pracownik.cs" />
     <Compile Include="Projekt.cs" />
     <Compile Include="Sponsor.cs" />
+    <Compile Include="TestoweWywolania.cs" />
     <Compile Include="Uwaga.cs" />
     <Compile Include="Uzytkownik.cs" />
     <Compile Include="Zadanie.cs" />

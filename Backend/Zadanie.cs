@@ -36,10 +36,14 @@ namespace Backend
         }
         public Zadanie(string czasRozpoczecia, string czasZakonczenia, string temat, string tresc, List<Pracownik> wykonawcy, List<Uwaga> uwagi, WaznoscZadania waznoscZadania)
         {
-            DateTime.TryParseExact(czasRozpoczecia, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MMM-yy" }
+            DateTime.TryParseExact(czasRozpoczecia, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MMM-yy", "dd.MM.yyyy", "dd-MM-yyyy" }
             , null, DateTimeStyles.None, out this._czasRozpoczecia);
-            DateTime.TryParseExact(czasZakonczenia, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MMM-yy" }
+            DateTime.TryParseExact(czasZakonczenia, new[] { "yyyy-MM-dd", "yyyy/MM/dd", "MM/dd/yy", "dd-MMM-yy", "dd.MM.yyyy", "dd-MM-yyyy" }
             , null, DateTimeStyles.None, out this._czasZakonczenia);
+            if (_czasRozpoczecia.CompareTo(_czasZakonczenia) > 0)
+            {
+                throw new NieprawidloweRamyCzasoweException();
+            }
             _temat = temat;
             _tresc = tresc;
             _wykonane = false;
@@ -47,6 +51,28 @@ namespace Backend
             _wykonawcy = wykonawcy;
             _uwagi = uwagi;
             _waznoscZadania = waznoscZadania;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach(var x in Wykonawcy)
+            {
+                sb.Append(x.toShortString());
+                sb.Append("\n");
+            }
+            StringBuilder sb2 = new StringBuilder();
+            foreach (var x in Uwagi)
+            {
+                sb2.Append(x.ToString());
+                sb2.Append("\n");
+            }
+            return $"temat: {Temat}, tresc: {Tresc}, \n" +
+                $"Rozpoczecie: {CzasRozpoczecia.ToShortDateString()}\n" +
+                $"Przewidywane zakonczenie: {CzasZakonczenia.ToShortDateString()}\n" +
+                $"wykonane: {Wykonane}, opoznione?: {_opoznienie},\n" +
+                $"Wykonawcy:\n{sb.ToString()}" +
+                $"\nUwagi:\n{sb2.ToString()}";
         }
 
         public void dodajUwage(Uwaga u)

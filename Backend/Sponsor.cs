@@ -13,5 +13,9 @@ namespace Backend
         {
             return base.ToString()+ " SPONSOR";
         }
+        public Sponsor(string imie, string nazwisko, string dataUrodzenia, string pesel, string email) : base(imie, nazwisko, dataUrodzenia, pesel, email)
+        {
+
+        }
     }
 }
