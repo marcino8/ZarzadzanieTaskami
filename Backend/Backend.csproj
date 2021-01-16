@@ -35,5 +35,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArchiwumProjektow.cs" />
+    <Compile Include="BazaKont.cs" />
+    <Compile Include="Konto.cs" />
+    <Compile Include="Manager.cs" />
+    <Compile Include="Pracownik.cs" />
+    <Compile Include="Projekt.cs" />
+    <Compile Include="Sponsor.cs" />
+    <Compile Include="Uwaga.cs" />
+    <Compile Include="Uzytkownik.cs" />
+    <Compile Include="Zadanie.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
