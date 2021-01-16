@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    class Projekt
+    public class Projekt
     {
         string nazwa;
         string opis;
@@ -45,33 +45,33 @@ namespace Backend
             this.opis = opis;
         }
 
-        public void dodajZadanie()
+        public void dodajZadanie(Zadanie z)
         {
-
+            listaZadan.Add(z);
         }
 
-        public void usunZadanie()
+        public void usunZadanie(Zadanie z)
         {
-
+            listaZadan.Remove(z);
         }
 
-        public void dodajPracownika()
+        public void dodajPracownika(Pracownik p )
         {
-
+            listaPracownikow.Add(p);
         }
 
-        public void usunPracownika()
+        public void usunPracownika(Pracownik p)
         {
-
+            listaPracownikow.Remove(p);
         }
 
-        public void dodajSponsora()
+        public void dodajSponsora(Sponsor s)
         {
-
+            listaSponsorow.Add(s);
         }
-        public void usunSponsora()
+        public void usunSponsora(Sponsor s)
         {
-
+            listaSponsorow.Remove(s);
         }
 
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    class Konto
+    public class Konto
     {
         Uzytkownik _uzytkownik;
         string _login;

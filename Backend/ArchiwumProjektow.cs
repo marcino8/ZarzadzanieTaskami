@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    class ArchiwumProjektow
+    public class ArchiwumProjektow
     {
-        List<Projekt> zakonczoneProjekty
-        {
+        List<Projekt> zakonczoneProjekty;
 
-        }
     }
 }

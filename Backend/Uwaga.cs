@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    class Uwaga
+    public class Uwaga
     {
         string _tresc;
         Uzytkownik _zglaszajacy;
-        bool _rozwiazana;
+
+        public string Tresc { get => _tresc; set => _tresc = value; }
+        public Uzytkownik Zglaszajacy { get => _zglaszajacy; set => _zglaszajacy = value; }
     }
 }

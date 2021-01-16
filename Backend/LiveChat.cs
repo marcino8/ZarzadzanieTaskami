@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    class LiveChat
+    //Czy to nie za trudne?
+    public class LiveChat
     {
+        Projekt projekt;
     }
 }

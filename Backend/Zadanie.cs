@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Backend.Enumy;
 
 namespace Backend
 {
-    class Zadanie
+    public class Zadanie
     {
         DateTime _czasRozpoczecia;
         DateTime _czasZakonczenia;
         string _temat;
         string _tresc;
         bool _wykonane;
-        bool opoznienie;
-        enum 
+        bool _opoznienie;
+        WaznoscZadania waznoscZadania;
         List<Pracownik> _wykonawcy;
         List<Uwaga> _uwagi;
 
@@ -23,7 +24,7 @@ namespace Backend
         public string Temat { get => _temat; set => _temat = value; }
         public string Tresc { get => _tresc; set => _tresc = value; }
         public bool Wykonane { get => _wykonane; set => _wykonane = value; }
-        public bool Opoznienie { get => opoznienie; set => opoznienie = value; }
+        public bool Opoznienie { get => _opoznienie; set => _opoznienie = value; }
         public List<Pracownik> Wykonawcy { get => _wykonawcy; set => _wykonawcy = value; }
         public List<Uwaga> Uwagi { get => _uwagi; set => _uwagi = value; }
 
@@ -31,26 +32,26 @@ namespace Backend
         {
 
         }
-        public Zadanie(DateTime czasRozpoczecia, DateTime czasZakonczenia, string temat, string tresc, bool wykonane, bool opoznienie, List<Pracownik> wykonawcy, List<Uwaga> uwagi)
+        public Zadanie(DateTime czasRozpoczecia, DateTime czasZakonczenia, string temat, string tresc, List<Pracownik> wykonawcy, List<Uwaga> uwagi)
         {
             _czasRozpoczecia = czasRozpoczecia;
             _czasZakonczenia = czasZakonczenia;
             _temat = temat;
             _tresc = tresc;
-            _wykonane = wykonane;
-            this.opoznienie = opoznienie;
+            _wykonane = false;
+            _opoznienie = false;
             _wykonawcy = wykonawcy;
             _uwagi = uwagi;
         }
 
-        public void dodajUwage()
+        public void dodajUwage(Uwaga u)
         {
-
+            _uwagi.Add(u);
         }
 
         public void oznaczJakoZakonczone()
         {
-
+            _wykonane = true;
         }
     }
 }

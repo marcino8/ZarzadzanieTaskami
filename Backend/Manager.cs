@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    class Manager : Uzytkownik
+    public class Manager : Uzytkownik
     {
     }
 }

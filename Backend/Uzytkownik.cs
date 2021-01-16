@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    abstract class Uzytkownik
+    public abstract class Uzytkownik
     {
         string _imie;
         string _nazwisko;

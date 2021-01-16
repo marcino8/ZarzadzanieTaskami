@@ -6,13 +6,12 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    class BazaKont
+    public class BazaKont
     {
         List<Konto> lista_kont;
-
         public BazaKont()
         {
-            this.lista_kont = lista_kont;
+            this.lista_kont = new List<Konto>();
         }
 
         static BazaKont Wczytaj_Baze()

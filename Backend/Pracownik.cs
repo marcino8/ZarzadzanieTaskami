@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
-    class Pracownik : Uzytkownik
+    public class Pracownik : Uzytkownik
     {
     }
 }
