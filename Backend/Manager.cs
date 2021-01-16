@@ -21,5 +21,9 @@ namespace Backend
         {
 
         }
+        public Manager(string imie, string nazwisko, int dd, int mm, int yyyy, string pesel, string email) : base(imie, nazwisko, dd, mm, yyyy, pesel, email)
+        {
+
+        }
     }
 }

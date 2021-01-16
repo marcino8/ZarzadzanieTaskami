@@ -12,7 +12,7 @@ namespace Backend
     [XmlInclude(typeof(Sponsor))]
     [XmlInclude(typeof(Pracownik))]
     [XmlInclude(typeof(Manager))]
-    public class Uzytkownik 
+    public abstract class Uzytkownik 
     {
         string _imie;
         string _nazwisko;
@@ -29,7 +29,18 @@ namespace Backend
         public Uzytkownik()
         {
         }
-
+        public Uzytkownik(string imie, string nazwisko,int dd, int mm, int yyyy, string pesel, string email)
+        {
+            _imie = imie;
+            _nazwisko = nazwisko;
+            _dataUrodzenia = new DateTime(yyyy, mm, dd);
+            if (pesel.Length != 11)
+            {
+                throw new NotAPeselException();
+            }
+            _pesel = pesel;
+            _email = email;
+        }
         public Uzytkownik(string imie, string nazwisko, string dataUrodzenia, string pesel, string email)
         {
             _imie = imie;

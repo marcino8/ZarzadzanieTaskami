@@ -8,7 +8,7 @@
         Title="Window1" Height="450" Width="800" Background="#545d6a">
     <Grid RenderTransformOrigin="0.5,0.5" >
         <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="150,232,0,0" Padding="2, 7" VerticalAlignment="Top" Width="500" Height="36"/>
-        <Button x:Name="rejestracjaButton" Background="White" Opacity="0.9" FontSize="16" Height="34" Content="Zarejestruj się"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="143" Margin="313,335,336,0" />
+        <Button x:Name="rejestracjaButton" Background="White" Opacity="0.9" FontSize="16" Height="34" Content="Zarejestruj się"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="143" Margin="313,335,336,0" Click="rejestracjaButton_Click" />
         <TextBox x:Name="loginBox" FontSize="14" Padding="2, 7" Height="36" HorizontalAlignment="Left" Margin="150,150,0,0" VerticalAlignment="Top" Width="500" />
         <Label Content="                 Login" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Center" FontSize="38" FontWeight="Bold" Margin="150,25,142,0" Height="65" Width="500"/>
         <Label Content="Nazwa użytkownika" Foreground="White" FontSize="18" VerticalAlignment="Top" Margin="150,115,142,0" Height="36"/>

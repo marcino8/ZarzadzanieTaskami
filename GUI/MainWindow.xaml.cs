@@ -33,5 +33,11 @@ namespace GUI
         {
 
         }
+
+        private void rejestracjaButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window w = new Window2();
+            w.ShowDialog();
+        }
     }
 }

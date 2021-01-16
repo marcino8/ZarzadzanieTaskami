@@ -21,6 +21,10 @@ namespace Backend
         {
 
         }
+        public Sponsor(string imie, string nazwisko, int dd, int mm, int yyyy, string pesel, string email) : base(imie, nazwisko, dd, mm, yyyy, pesel, email)
+        {
+
+        }
 
     }
 }

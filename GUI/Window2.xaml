@@ -5,24 +5,194 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Window2" Height="450" Width="800" Background="#545d6a">
+        Title="Window2" Height="542.975" Width="907.851" Background="#545d6a">
     <Grid>
-        <Label Content="       Tworzenie konta&#xD;&#xA;" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Center" FontSize="38" FontWeight="Bold" Margin="157,28,167,0" Height="70" Width="468"/>
-        <TextBox x:Name="imieBox" FontSize="14" Padding="2, 7" Height="36" HorizontalAlignment="Left" Margin="262,118,0,0" VerticalAlignment="Top" Width="350"  />
-        <Label Foreground="White" FontSize="18" Content="Imię&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,118,0,0" Height="34" Width="100"/>
-        <TextBox x:Name="nazwiskoBox" FontSize="14" Padding="2, 7" Height="36" HorizontalAlignment="Left" Margin="262,158,0,0" VerticalAlignment="Top" Width="350"/>
-        <Label Foreground="White" FontSize="18" Content="Nazwisko&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,158,0,0" Height="34" Width="100"/>
+        <Label Content="       Tworzenie konta&#xD;&#xA;" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Center" FontSize="38" FontWeight="Bold" Margin="170,0,154,0" Height="70" Width="468"/>
+        <TextBox x:Name="loginBox" FontSize="14" Padding="2, 7" Height="36" HorizontalAlignment="Left" Margin="262,118,0,0" VerticalAlignment="Top" Width="350"  />
+        <Label Foreground="White" FontSize="18" Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,118,0,0" Height="34" Width="117"/>
+        <Label Foreground="White" FontSize="18" Content="Hasło" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,158,0,0" Height="34" Width="117"/>
         <TextBox x:Name="peselBox" FontSize="14" Padding="2, 7" Height="36" HorizontalAlignment="Left" Margin="262,198,0,0" VerticalAlignment="Top" Width="350" />
-        <Label Foreground="White" FontSize="18" Content="Pesel&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,198,0,0" Height="34" Width="100"/>
+        <Label Foreground="White" FontSize="18" Content="Pesel&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,198,0,0" Height="34" Width="117"/>
         <TextBox x:Name="emailBox" FontSize="14" Padding="2, 7" Height="36" HorizontalAlignment="Left" Margin="262,238,0,0" VerticalAlignment="Top" Width="350"/>
-        <Label Foreground="White" FontSize="18" Height="34" Content="Email&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,238,0,0" Width="100"/>
+        <Label Foreground="White" FontSize="18" Height="34" Content="Email&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,238,0,0" Width="117"/>
         <ComboBox x:Name="listaCombo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="350" Margin="262,278,0,0" Height="36" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem Content="Pracownik"/>
             <ComboBoxItem Content="Sponsor"/>
             <ComboBoxItem Content="Manager"/>
         </ComboBox>
-        <Label Foreground="White" FontSize="18" Content="ComboBox&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="157,278,0,0" Height="34" Width="100"/>
+        <Label Foreground="White" FontSize="18" Content="Typ konta&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,277,0,0" Height="34" Width="117"/>
         <Rectangle Fill="White" Opacity="0.9" HorizontalAlignment="Left" Height="2" VerticalAlignment="Top" Width="498" Margin="140,96,0,0"/>
+        <Button x:Name="rejestracjaButton" Background="White" Opacity="0.9" FontSize="16" Height="34" Content="Utwórz konto"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="143" Margin="629,238,20,0" Click="rejestracjaButton_Click" RenderTransformOrigin="0.515,-0.68" />
+        <TextBox x:Name="imieBox" FontSize="14" Padding="2, 7" Height="36" HorizontalAlignment="Left" Margin="262,317,0,0" VerticalAlignment="Top" Width="350"  />
+        <Label Foreground="White" FontSize="18" Content="Imię&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,317,0,0" Height="34" Width="117"/>
+        <TextBox x:Name="nazwiskoBox" FontSize="14" Padding="2, 7" Height="36" HorizontalAlignment="Left" Margin="262,356,0,0" VerticalAlignment="Top" Width="350"  />
+        <Label Foreground="White" FontSize="18" Content="Nazwisko" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="140,356,0,0" Height="34" Width="117"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="262,158,0,0" Padding="2, 7" VerticalAlignment="Top" Width="350" Height="36"/>
+        <Label Foreground="White" FontSize="18" Content="Data Urodzenia" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="112,406,0,0" Height="34" Width="145"/>
+        <ComboBox x:Name="listaComboDzien" HorizontalAlignment="Left" VerticalAlignment="Top" Width="59" Margin="262,404,0,0" Height="36" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="6"/>
+            <ComboBoxItem Content="7"/>
+            <ComboBoxItem Content="8"/>
+            <ComboBoxItem Content="9"/>
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="11"/>
+            <ComboBoxItem Content="12"/>
+            <ComboBoxItem Content="13"/>
+            <ComboBoxItem Content="14"/>
+            <ComboBoxItem Content="15"/>
+            <ComboBoxItem Content="16"/>
+            <ComboBoxItem Content="17"/>
+            <ComboBoxItem Content="18"/>
+            <ComboBoxItem Content="19"/>
+            <ComboBoxItem Content="20"/>
+            <ComboBoxItem Content="21"/>
+            <ComboBoxItem Content="22"/>
+            <ComboBoxItem Content="23"/>
+            <ComboBoxItem Content="24"/>
+            <ComboBoxItem Content="25"/>
+            <ComboBoxItem Content="26"/>
+            <ComboBoxItem Content="27"/>
+            <ComboBoxItem Content="28"/>
+            <ComboBoxItem Content="29"/>
+            <ComboBoxItem Content="30"/>
+            <ComboBoxItem Content="31"/>
+        </ComboBox>
+        <ComboBox x:Name="listaComboMiesiac" HorizontalAlignment="Left" VerticalAlignment="Top" Width="56" Margin="326,404,0,0" Height="36" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="6"/>
+            <ComboBoxItem Content="7"/>
+            <ComboBoxItem Content="8"/>
+            <ComboBoxItem Content="9"/>
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="11"/>
+            <ComboBoxItem Content="12"/>
+        </ComboBox>
+        <ComboBox x:Name="listaComboRok" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77" Margin="387,404,0,0" Height="36" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="1900"/>
+            <ComboBoxItem Content="1901"/>
+            <ComboBoxItem Content="1902"/>
+            <ComboBoxItem Content="1903"/>
+            <ComboBoxItem Content="1904"/>
+            <ComboBoxItem Content="1905"/>
+            <ComboBoxItem Content="1906"/>
+            <ComboBoxItem Content="1907"/>
+            <ComboBoxItem Content="1908"/>
+            <ComboBoxItem Content="1909"/>
+            <ComboBoxItem Content="1910"/>
+            <ComboBoxItem Content="1911"/>
+            <ComboBoxItem Content="1912"/>
+            <ComboBoxItem Content="1913"/>
+            <ComboBoxItem Content="1914"/>
+            <ComboBoxItem Content="1915"/>
+            <ComboBoxItem Content="1916"/>
+            <ComboBoxItem Content="1917"/>
+            <ComboBoxItem Content="1918"/>
+            <ComboBoxItem Content="1919"/>
+            <ComboBoxItem Content="1920"/>
+            <ComboBoxItem Content="1921"/>
+            <ComboBoxItem Content="1922"/>
+            <ComboBoxItem Content="1923"/>
+            <ComboBoxItem Content="1924"/>
+            <ComboBoxItem Content="1925"/>
+            <ComboBoxItem Content="1926"/>
+            <ComboBoxItem Content="1927"/>
+            <ComboBoxItem Content="1928"/>
+            <ComboBoxItem Content="1929"/>
+            <ComboBoxItem Content="1930"/>
+            <ComboBoxItem Content="1931"/>
+            <ComboBoxItem Content="1932"/>
+            <ComboBoxItem Content="1933"/>
+            <ComboBoxItem Content="1934"/>
+            <ComboBoxItem Content="1935"/>
+            <ComboBoxItem Content="1936"/>
+            <ComboBoxItem Content="1937"/>
+            <ComboBoxItem Content="1938"/>
+            <ComboBoxItem Content="1939"/>
+            <ComboBoxItem Content="1940"/>
+            <ComboBoxItem Content="1941"/>
+            <ComboBoxItem Content="1942"/>
+            <ComboBoxItem Content="1943"/>
+            <ComboBoxItem Content="1944"/>
+            <ComboBoxItem Content="1945"/>
+            <ComboBoxItem Content="1946"/>
+            <ComboBoxItem Content="1947"/>
+            <ComboBoxItem Content="1948"/>
+            <ComboBoxItem Content="1949"/>
+            <ComboBoxItem Content="1950"/>
+            <ComboBoxItem Content="1951"/>
+            <ComboBoxItem Content="1952"/>
+            <ComboBoxItem Content="1953"/>
+            <ComboBoxItem Content="1954"/>
+            <ComboBoxItem Content="1955"/>
+            <ComboBoxItem Content="1956"/>
+            <ComboBoxItem Content="1957"/>
+            <ComboBoxItem Content="1958"/>
+            <ComboBoxItem Content="1959"/>
+            <ComboBoxItem Content="1960"/>
+            <ComboBoxItem Content="1961"/>
+            <ComboBoxItem Content="1962"/>
+            <ComboBoxItem Content="1963"/>
+            <ComboBoxItem Content="1964"/>
+            <ComboBoxItem Content="1965"/>
+            <ComboBoxItem Content="1966"/>
+            <ComboBoxItem Content="1967"/>
+            <ComboBoxItem Content="1968"/>
+            <ComboBoxItem Content="1969"/>
+            <ComboBoxItem Content="1970"/>
+            <ComboBoxItem Content="1971"/>
+            <ComboBoxItem Content="1972"/>
+            <ComboBoxItem Content="1973"/>
+            <ComboBoxItem Content="1974"/>
+            <ComboBoxItem Content="1975"/>
+            <ComboBoxItem Content="1976"/>
+            <ComboBoxItem Content="1977"/>
+            <ComboBoxItem Content="1978"/>
+            <ComboBoxItem Content="1979"/>
+            <ComboBoxItem Content="1980"/>
+            <ComboBoxItem Content="1981"/>
+            <ComboBoxItem Content="1982"/>
+            <ComboBoxItem Content="1983"/>
+            <ComboBoxItem Content="1984"/>
+            <ComboBoxItem Content="1985"/>
+            <ComboBoxItem Content="1986"/>
+            <ComboBoxItem Content="1987"/>
+            <ComboBoxItem Content="1988"/>
+            <ComboBoxItem Content="1989"/>
+            <ComboBoxItem Content="1990"/>
+            <ComboBoxItem Content="1991"/>
+            <ComboBoxItem Content="1992"/>
+            <ComboBoxItem Content="1993"/>
+            <ComboBoxItem Content="1994"/>
+            <ComboBoxItem Content="1995"/>
+            <ComboBoxItem Content="1996"/>
+            <ComboBoxItem Content="1997"/>
+            <ComboBoxItem Content="1998"/>
+            <ComboBoxItem Content="1999"/>
+            <ComboBoxItem Content="2000"/>
+            <ComboBoxItem Content="2001"/>
+            <ComboBoxItem Content="2002"/>
+            <ComboBoxItem Content="2003"/>
+            <ComboBoxItem Content="2004"/>
+            <ComboBoxItem Content="2005"/>
+            <ComboBoxItem Content="2006"/>
+            <ComboBoxItem Content="2007"/>
+            <ComboBoxItem Content="2008"/>
+            <ComboBoxItem Content="2009"/>
+            <ComboBoxItem Content="2010"/>
+            <ComboBoxItem Content="2011"/>
+            <ComboBoxItem Content="2012"/>
+            <ComboBoxItem Content="2013"/>
+            <ComboBoxItem Content="2014"/>
+        </ComboBox>
 
     </Grid>
 </Window>
