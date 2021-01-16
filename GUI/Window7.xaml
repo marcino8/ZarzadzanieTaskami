@@ -7,8 +7,11 @@
         mc:Ignorable="d"
         Title="Window7" Height="450" Width="800" Background="#545d6a">
     <Grid>
-        <ListBox HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="270" Margin="91,43,0,0"/>
-        <ListBox HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="282" Margin="432,43,0,0"/>
+        <ListBox x:Name="zadaniaListBoxLewy" HorizontalAlignment="Left" Height="169" VerticalAlignment="Top" Width="256" Margin="91,43,0,0"/>
+        <ListBox x:Name="zadaniaListBoxPrawy" HorizontalAlignment="Left" Height="169" VerticalAlignment="Top" Width="256" Margin="432,43,0,0"/>
+        <Button x:Name="zakonczoneButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Oznacz jako zakończone" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="91,283,445,0" />
+        <Button x:Name="chatButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Wejdź na chat" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="432,283,104,0" />
+        <Button x:Name="uwagaButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Dodaj uwagę" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="432,333,104,0" />
 
     </Grid>
 </Window>

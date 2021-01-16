@@ -1,0 +1,22 @@
+﻿<Window x:Class="GUI.Window13"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUI"
+        mc:Ignorable="d"
+        Title="Window13" Height="450" Width="800" Background="#545d6a">
+    <Grid>
+        <TextBox x:Name="tematBox" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Temat&#xD;&#xA;" VerticalAlignment="Top" Width="350" Margin="214,167,0,0"/>
+        <TextBox x:Name="trescBox" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Treść&#xD;&#xA;&#xA;" VerticalAlignment="Top" Width="350" Margin="214,218,0,0"/>
+        <ComboBox x:Name="listaCombo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="350" Margin="214,272,0,0" Height="27" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="Bardzo ważne"/>
+            <ComboBoxItem Content="Ważne"/>
+            <ComboBoxItem Content="Mało ważne"/>
+        </ComboBox>
+        <Button x:Name="zatwierdzButton" Background="White" Opacity="0.9" Padding="0, 2" Height="27" Content="Zatwierdź" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="214,332,448,0" />
+        <Button x:Name="anulujButton" Background="White" Opacity="0.9" Padding="0, 2" Height="27" Content="Anuluj" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="434,332,228,0" />
+        <TextBox x:Name="tematBox_Copy" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="61" TextWrapping="Wrap" Text="Tutaj jakas data rozpoczęcia powinna być ale idk czy textbox moze byc czy jak&#xD;&#xA;" VerticalAlignment="Top" Width="350" Margin="214,77,0,0"/>
+
+    </Grid>
+</Window>

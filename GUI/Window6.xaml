@@ -7,10 +7,18 @@
         mc:Ignorable="d"
         Title="Window6" Height="450" Width="800" Background="#545d6a">
     <Grid>
-        <ListBox HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="275" Margin="75,61,0,0"/>
-        <ListBox HorizontalAlignment="Left" Height="66" VerticalAlignment="Top" Width="275" Margin="443,61,0,0"/>
-        <Label Content="Przydzielone zadania&#xD;&#xA;&#xA;" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,23,0,0" Height="38"/>
-        <Label Content="Nowe zadania&#xD;&#xA;&#xA;" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="443,23,0,0" Height="38"/>
+        <ListBox x:Name="przydzieloneListBox" HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="256" Margin="75,61,0,0"/>
+        <ListBox x:Name="noweListBox" HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="256" Margin="431,61,0,0"/>
+        <Label Foreground="White" FontSize="18" Height="34" Content="Przydzielone zadania&#xD;&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,23,0,0" Width="256"/>
+        <Label Foreground="White" FontSize="18" Height="34" Content="Nowe zadania&#xD;&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="431,22,0,0" Width="256"/>
+        <Button x:Name="zakonczoneButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Wyświetl zakończone" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="75,180,461,0" />
+        <Button x:Name="pracownicyButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Wyświetl pracowników" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="75,231,461,0" />
+        <Button x:Name="chatButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Wejdź na chat" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="75,282,461,0" />
+        <Button x:Name="uwagiButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Przeglądaj uwagi" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="75,331,461,0" />
+        <Button x:Name="sortujButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Sortuj" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="431,180,105,0" />
+        <Button x:Name="przydzielButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Przydziel" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="431,231,105,0" />
+        <Button x:Name="zatwiedzButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Zatwierdź" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="431,282,105,0" />
+        <Button x:Name="uwagaButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Dodaj uwagę" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="431,331,105,0" />
 
     </Grid>
 </Window>

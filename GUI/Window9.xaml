@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="Window9" Height="450" Width="800" Background="#545d6a">
     <Grid>
-        <Label Content="Pracownicy&#xD;&#xA;&#xA;" Foreground="White" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="344,43,0,0" Height="38"/>
-        <ListBox HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="464" Margin="158,86,0,0"/>
-        <Button Content="Dodaj" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="201,331,0,0" Click="Button_Click"/>
-        <Button Content="Usuń" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="477,331,0,0" Click="Button_Click"/>
-        <Button Content="Przydziel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="338,331,0,0" Click="Button_Click"/>
+        <Label Foreground="White" FontSize="18" Height="34" Content="Pracownicy&#xD;&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="158,43,0,0"  Width="464"/>
+        <ListBox HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="464" Margin="158,86,0,0"/>
+        <Button x:Name="dodajButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Dodaj" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="158,308,504,0" />
+        <Button x:Name="przydzielButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Przydziel" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="327,308,335,0" />
+        <Button x:Name="usunButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Usuń" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="492,308,170,0" />
 
     </Grid>
 </Window>

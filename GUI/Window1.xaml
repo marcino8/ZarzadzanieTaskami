@@ -7,13 +7,14 @@
         mc:Ignorable="d"
         Title="Window1" Height="450" Width="800" Background="#545d6a">
     <Grid RenderTransformOrigin="0.5,0.5" >
-        <PasswordBox HorizontalAlignment="Left" Margin="150,232,0,0" VerticalAlignment="Top" Width="500" Height="35"/>
-        <Button Content="Zarejestruj się" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="143" Margin="313,335,336,0" Height="34"/>
-        <TextBox HorizontalAlignment="Left" Margin="150,157,0,0" VerticalAlignment="Top" Width="500" Height="35"/>
-        <Label Content="                 Login" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Center" FontSize="38" FontWeight="Bold" Margin="150,26,142,0" Height="70" Width="500"/>
-        <Label Content="Nazwa użytkownika" Foreground="White" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,123,0,0" Width="500" Height="29"/>
-        <Label Content="Hasło" Foreground="White" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,198,0,0" Width="500" Height="29"/>
-        <Label Content="Nie masz konta?&#xD;&#xA;" Foreground="White" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="313,301,0,0" Width="143" Height="29"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="150,232,0,0" Padding="2, 7" VerticalAlignment="Top" Width="500" Height="36"/>
+        <Button x:Name="rejestracjaButton" Background="White" Opacity="0.9" FontSize="16" Height="34" Content="Zarejestruj się"  HorizontalAlignment="Center" VerticalAlignment="Top" Width="143" Margin="313,335,336,0" />
+        <TextBox x:Name="loginBox" FontSize="14" Padding="2, 7" Height="36" HorizontalAlignment="Left" Margin="150,150,0,0" VerticalAlignment="Top" Width="500" />
+        <Label Content="                 Login" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Center" FontSize="38" FontWeight="Bold" Margin="150,25,142,0" Height="65" Width="500"/>
+        <Label Content="Nazwa użytkownika" Foreground="White" FontSize="18" VerticalAlignment="Top" Margin="150,115,142,0" Height="36"/>
+        <Label Content="Hasło" Foreground="White" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,197,0,0" Width="500" Height="35"/>
+        <Label Content="Nie masz konta?&#xD;&#xA;" Foreground="White" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="313,301,0,0" Width="143" Height="34"/>
+        <Rectangle Fill="White" Opacity="0.9" HorizontalAlignment="Left" Height="2" VerticalAlignment="Top" Width="498" Margin="152,96,0,0"/>
 
     </Grid>
 </Window>
