@@ -7,12 +7,18 @@ using System.Threading.Tasks;
 namespace Backend
 {
     [Serializable]
-    public class Sponsor : Uzytkownik
+    public class Sponsor : Uzytkownik, IEquatable<Uzytkownik>
     {
         public override string ToString()
         {
             return base.ToString()+ " SPONSOR";
         }
+
+        public bool Equals(Uzytkownik other)
+        {
+            return this.Imie.Equals(other.Imie) && this.Nazwisko.Equals(other.Nazwisko) && this.Pesel.Equals(other.Pesel);
+        }
+
         public Sponsor()
         {
 

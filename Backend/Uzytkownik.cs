@@ -12,7 +12,7 @@ namespace Backend
     [XmlInclude(typeof(Sponsor))]
     [XmlInclude(typeof(Pracownik))]
     [XmlInclude(typeof(Manager))]
-    public abstract class Uzytkownik 
+    public abstract class Uzytkownik
     {
         string _imie;
         string _nazwisko;

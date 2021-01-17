@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSponsor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Sponsor>
+    <Imie>Zuzanna</Imie>
+    <Nazwisko>Szewczyk</Nazwisko>
+    <DataUrodzenia>1989-12-12T00:00:00</DataUrodzenia>
+    <Pesel>99901122314</Pesel>
+    <Email>sponsoruje@gmail.com</Email>
+  </Sponsor>
+  <Sponsor>
+    <Imie>Zuzanna</Imie>
+    <Nazwisko>Szewczyk</Nazwisko>
+    <DataUrodzenia>1989-12-12T00:00:00</DataUrodzenia>
+    <Pesel>99901122314</Pesel>
+    <Email>sponsoruje@gmail.com</Email>
+  </Sponsor>
+</ArrayOfSponsor>

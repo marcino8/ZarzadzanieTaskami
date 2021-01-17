@@ -41,7 +41,6 @@
     <Compile Include="BazaKont.cs" />
     <Compile Include="BazaProjektow.cs" />
     <Compile Include="Enumy.cs" />
-    <Compile Include="IBaza.cs" />
     <Compile Include="Konto.cs" />
     <Compile Include="LiveChat.cs" />
     <Compile Include="Manager.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Backend;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace GUI
     /// </summary>
     public partial class Window7 : Window
     {
-        public Window7()
+        public Window7(Uzytkownik u, Projekt p)
         {
             InitializeComponent();
         }

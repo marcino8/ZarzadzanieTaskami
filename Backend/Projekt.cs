@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Backend
 {
@@ -12,10 +13,10 @@ namespace Backend
         string nazwa;
         string opis;
         Manager manager;
-        List<Zadanie> listaZadan;
-        List<Zadanie> wykonaneZadania;
-        List<Pracownik> listaPracownikow;
-        List<Sponsor> listaSponsorow;
+        public List<Zadanie> listaZadan;
+        public List<Zadanie> wykonaneZadania;
+        public List<Pracownik> listaPracownikow;
+        public List<Sponsor> listaSponsorow;
         //DateTime dataRozpoczecia;
         //DateTime dataZakonczenia;
         //DateTime deadline;
@@ -36,10 +37,17 @@ namespace Backend
                 sb.Append(x.toShortString());
             }
 
-            return $"Temat: {nazwa}\n" +
-                $"Opis: {opis}\n" +
-                $"Manager: {manager.toShortString()}\n" +
-                $"Zadania:\n" + sb.ToString();
+            return $"Temat: {nazwa}, " +
+                $"Manager: {manager.toShortString()}";
+ 
+        }
+
+        public Projekt(string nazwa, string opis, Manager manager, List<Zadanie> listaZadan, List<Zadanie> wykonaneZadania, List<Pracownik> listaPracownikow, List<Sponsor> listaSponsorow) : this(nazwa, opis, manager)
+        {
+            this.listaZadan = listaZadan;
+            this.wykonaneZadania = wykonaneZadania;
+            this.listaPracownikow = listaPracownikow;
+            this.listaSponsorow = listaSponsorow;
         }
 
         public Projekt()

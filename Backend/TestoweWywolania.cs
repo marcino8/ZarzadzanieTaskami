@@ -12,11 +12,13 @@ namespace Backend
        
         public static void Main(string[] args)
         {
+
             //public Uzytkownik(string imie, string nazwisko, string dataUrodzenia, string pesel, string email)
             Pracownik p1 = new Pracownik("Kornelia", "Kłopecka", "10-10-2000", "99900022211", "korneliakl@gmail.com");
             Pracownik p2 = new Pracownik("Jola", "Pront", "10-01-2010", "99111154611", "jopr@gmail.com");
             Pracownik p3 = new Pracownik("Agnieszka", "Mazik", "12-10-2022", "99901562211", "agumaz@gmail.com");
             Pracownik p4 = new Pracownik("Julia", "Mala", "10-11-2001", "22412663451", "jumal@gmail.com");
+            Pracownik p5 = new Pracownik("Julia", "Mala", "10-11-2001", "22412663451", "jumal@gmail.com");
 
             Console.WriteLine(p1);
             Console.WriteLine(p2);
@@ -53,6 +55,11 @@ namespace Backend
             p.dodajZadanie(z3);
             p.dodajSponsora(s1);
             Console.WriteLine(p.ToString());
+            p.dodajPracownika(p1);
+            p.dodajPracownika(p2);
+            p.dodajSponsora(s1);
+
+
 
             BazaKont mainbase = new BazaKont();
             Konto k1 = new Konto(p1, "mama", "tata");
@@ -62,8 +69,8 @@ namespace Backend
             mainbase.DodajDoBazy(k2);
             mainbase.DodajDoBazy(k3);
 
-
-            foreach(var x in mainbase.wybierzKonta(new Pracownik()))
+            Console.WriteLine("Co tu sie dzieje");
+            foreach (var x in mainbase.wybierzKonta(new Pracownik()))
             {
                 Console.WriteLine(x.Uzytkownik.toShortString());
             }
@@ -71,7 +78,7 @@ namespace Backend
             {
                 Console.WriteLine(x.Uzytkownik.toShortString());
             }
-
+            Console.WriteLine("BAZA KONT");
             mainbase.Zapisz_Baze(); 
 
             BazaKont b2 = BazaKont.Wczytaj_Baze();
@@ -81,11 +88,43 @@ namespace Backend
                 Console.WriteLine(x.Uzytkownik.toShortString());
             }
             
-            Console.WriteLine(b2.SprawdzKonto("tygrysek", "puchatek")); 
+            Console.WriteLine(b2.SprawdzKonto("tygrysek", "puchatek"));
+
+            BazaProjektow b = new BazaProjektow();
+            b.DodajDoBazy(p);
+            b.Zapisz_Baze();
+
+            foreach(var ss in b.wyszukajProjekty(p1))
+            {
+                Console.WriteLine(ss.ToString());
+            }
+            BazaProjektow b22 = new BazaProjektow();
+            b22= BazaProjektow.Wczytaj_Baze();
+            Console.WriteLine("LOOOOOOLL");
+            Console.WriteLine(b.wyszukajProjekty(p1).Count().ToString());
+            Console.WriteLine(b22.wyszukajProjekty(p1).Count().ToString());
+            foreach(var x in b22.Lista_projektow)
+            {
+                foreach(var c in x.ListaPracownikow)
+                {
+                    Console.WriteLine(c);
+                }
+            }
+               
+            Console.WriteLine(b22.Lista_projektow.Where(a => a.ListaPracownikow.Contains(p1)).ToList().Count()); 
+
+
+
+
+
+
+
+
 
 
 
             Console.ReadKey();
+            
         }
        
     }

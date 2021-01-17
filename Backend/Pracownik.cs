@@ -7,12 +7,18 @@ using System.Threading.Tasks;
 namespace Backend
 {
     [Serializable]
-    public class Pracownik : Uzytkownik
+    public class Pracownik : Uzytkownik, IEquatable<Uzytkownik>
     {
         public override string ToString()
         {
             return base.ToString() + " PRACOWNIK";
         }
+
+        public bool Equals(Uzytkownik other)
+        {
+            return this.Imie.Equals(other.Imie) && this.Nazwisko.Equals(other.Nazwisko) && this.Pesel.Equals(other.Pesel);
+        }
+
         public Pracownik()
         {
 
