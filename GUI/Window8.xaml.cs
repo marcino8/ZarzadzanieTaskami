@@ -18,7 +18,7 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window8.xaml
+    /// Okno archium projektow
     /// </summary>
     public partial class Window8 : Window
     {

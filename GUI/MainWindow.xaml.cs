@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window1.xaml
+    /// Okno startowe, okno logowania
     /// </summary>
     public partial class Window1 : Window
     {
@@ -34,13 +34,21 @@ namespace GUI
         {
 
         }
-
+        /// <summary>
+        /// Metoda pokazuje okno rejestracji nowego konta
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void rejestracjaButton_Click(object sender, RoutedEventArgs e)
         {
             Window w = new Window2();
             w.ShowDialog();
         }
-
+        /// <summary>
+        /// Metoda próbuje zalogować użytkownika
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void zalogujButton_Click(object sender, RoutedEventArgs e)
         {
             if (loginBox.Text != "" &&

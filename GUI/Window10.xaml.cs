@@ -17,13 +17,18 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window10.xaml
+    /// Okno przydziału pracownikowi zadania
     /// </summary>
     public partial class Window10 : Window
     {
         ObservableCollection<Uzytkownik> wybraniPracownicy;
         Projekt projekt;
         Zadanie z;
+        /// <summary>
+        /// Konstruktor
+        /// </summary>
+        /// <param name="p">Projekt na którym pracujemy</param>
+        /// <param name="z">Zadanie do przydzielenia</param>
         public Window10(Projekt p, Zadanie z)
         {
 

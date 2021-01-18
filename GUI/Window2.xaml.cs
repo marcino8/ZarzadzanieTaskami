@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window2.xaml
+    /// Okno tworzenia konta
     /// </summary>
     public partial class Window2 : Window
     {

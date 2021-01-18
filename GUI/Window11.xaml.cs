@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window11.xaml
+    /// Okno przeglądania zadań
     /// </summary>
     public partial class Window11 : Window
     {

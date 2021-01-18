@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window9.xaml
+    /// Okno przydziału pracowników do projektu
     /// </summary>
     public partial class Window9 : Window
     {

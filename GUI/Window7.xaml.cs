@@ -18,7 +18,7 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window7.xaml
+    /// Panel użytkownika i sponsora
     /// </summary>
     public partial class Window7 : Window
     {

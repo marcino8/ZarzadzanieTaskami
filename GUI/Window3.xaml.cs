@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window3.xaml
+    /// Panel zarządzania Managera
     /// </summary>
     public partial class Window3 : Window
     {

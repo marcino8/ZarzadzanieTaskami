@@ -18,7 +18,7 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window12.xaml
+    /// Okno edycji tematu lub tresci zadania, oraz dodawania uwag
     /// </summary>
     public partial class Window12 : Window
     {

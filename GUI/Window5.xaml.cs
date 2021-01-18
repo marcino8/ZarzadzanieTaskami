@@ -18,7 +18,7 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window5.xaml
+    /// Okno tworzenia nowego projektu
     /// </summary>
     public partial class Window5 : Window
     {

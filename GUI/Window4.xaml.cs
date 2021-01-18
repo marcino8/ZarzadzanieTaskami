@@ -18,7 +18,7 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window4.xaml
+    /// Okno wyboru projektu
     /// </summary>
     public partial class Window4 : Window
     {

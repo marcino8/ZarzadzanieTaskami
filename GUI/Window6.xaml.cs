@@ -18,7 +18,7 @@ using System.Windows.Shapes;
 namespace GUI
 {
     /// <summary>
-    /// Logika interakcji dla klasy Window6.xaml
+    /// Okno edycji projektu/zarządzania projektem
     /// </summary>
     public partial class Window6 : Window
     {
