@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Backend;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,14 +21,33 @@ namespace GUI
     /// </summary>
     public partial class Window8 : Window
     {
+        ObservableCollection<Projekt> archiwum;
         public Window8()
         {
             InitializeComponent();
+            ArchiwumProjektow a1 = ArchiwumProjektow.WczytajArchiwum();
+            archiwum = new ObservableCollection<Projekt>(a1.ZakonczoneProjekty);
+            projektyListBox.ItemsSource = archiwum;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void projektyListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void PrzeniesDoBazy_Click(object sender, RoutedEventArgs e)
+        {
+            BazaProjektow bp = BazaProjektow.Wczytaj_Baze();
+            ArchiwumProjektow archiwumProjektow = ArchiwumProjektow.WczytajArchiwum();
+            if (projektyListBox.SelectedIndex > -1)
+            {
+                Projekt x = (Projekt)projektyListBox.SelectedItem;
+                archiwum.Remove(x);
+                bp.DodajDoBazy(x);
+                archiwumProjektow.UsunTrwale(x);
+                bp.Zapisz_Baze();
+                archiwumProjektow.ZapiszArchiwum();
+            }
         }
     }
 }

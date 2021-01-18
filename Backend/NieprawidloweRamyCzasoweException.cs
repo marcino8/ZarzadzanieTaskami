@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace Backend
 {
     [Serializable]
-    internal class NieprawidloweRamyCzasoweException : Exception
+    public class NieprawidloweRamyCzasoweException : Exception
     {
         public NieprawidloweRamyCzasoweException()
         {

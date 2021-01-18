@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Window3" Height="450" Width="800" Background="#545d6a">
+        Title="ProjektManager" Height="450" Width="800" Background="#545d6a">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="nowyButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Stwórz nowy projekt&#xD;&#xA;" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="296" Margin="240,100,0,0" />
-        <Button x:Name="aktualneButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Przeglądaj aktualne projekty&#xA;" FontSize="16" Margin="240,180,0,205" HorizontalAlignment="Left" Width="296"/>
-        <Button x:Name="archiwumButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Otwórz archiwum projektów&#xA;" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="296" Margin="240,260,0,0" />
+        <Button x:Name="nowyButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Stwórz nowy projekt&#xD;&#xA;" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="296" Margin="240,100,0,0" Click="nowyButton_Click" />
+        <Button x:Name="aktualneButton" Background="White" Opacity="0.9" Padding="0, 4" Content="Przeglądaj aktualne projekty&#xA;" FontSize="16" Margin="240,184,0,197" HorizontalAlignment="Left" Width="296" Click="aktualneButton_Click"/>
+        <Button x:Name="archiwumButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Otwórz archiwum projektów&#xA;" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Top" Width="296" Margin="240,260,0,0" Click="archiwumButton_Click" />
 
     </Grid>
 </Window>

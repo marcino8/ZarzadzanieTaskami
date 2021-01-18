@@ -26,5 +26,25 @@ namespace GUI
             uzytkownik = u;
             InitializeComponent();
         }
+
+        private void nowyButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window w = new Window5(uzytkownik);
+            this.Close();
+            w.Show();
+        }
+
+        private void aktualneButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window w1 = new Window4(uzytkownik);
+            this.Close();
+            w1.Show();
+        }
+
+        private void archiwumButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window w1 = new Window8();
+            w1.ShowDialog();
+        }
     }
 }

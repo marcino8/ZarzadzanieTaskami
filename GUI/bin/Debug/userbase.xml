@@ -40,4 +40,22 @@
       <DataUrodzenia>0001-01-01T00:00:00</DataUrodzenia>
     </Uzytkownik>
   </Konto>
+  <Konto>
+    <Login>1234</Login>
+    <Haslo>1234</Haslo>
+    <Uzytkownik xsi:type="Pracownik">
+      <DataUrodzenia>0001-01-01T00:00:00</DataUrodzenia>
+    </Uzytkownik>
+  </Konto>
+  <Konto>
+    <Login>admin</Login>
+    <Haslo>admin</Haslo>
+    <Uzytkownik xsi:type="Manager">
+      <Imie>Filip</Imie>
+      <Nazwisko>Dobry</Nazwisko>
+      <DataUrodzenia>1991-12-03T00:00:00</DataUrodzenia>
+      <Pesel>99092455822</Pesel>
+      <Email>admin@gmail.com</Email>
+    </Uzytkownik>
+  </Konto>
 </ArrayOfKonto>

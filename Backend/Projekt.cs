@@ -8,7 +8,7 @@ using System.Xml.Serialization;
 namespace Backend
 {
     [Serializable]
-    public class Projekt : ICloneable
+    public class Projekt : ICloneable, IEquatable<Projekt>
     {
         string nazwa;
         string opis;
@@ -34,7 +34,7 @@ namespace Backend
             StringBuilder sb = new StringBuilder();
             foreach(var x in ListaZadan)
             {
-                sb.Append(x.toShortString());
+                sb.Append(x.ToString());
             }
 
             return $"Temat: {nazwa}, " +
@@ -94,6 +94,10 @@ namespace Backend
 
         public void usunPracownika(Pracownik p)
         {
+            foreach(Zadanie z in this.zadaniaPracownika(p))
+            {
+                z.Wykonawcy.Remove(p);
+            }
             listaPracownikow.Remove(p);
         }
 
@@ -116,12 +120,31 @@ namespace Backend
 
         public List<Zadanie> zadaniaPracownika(Pracownik p)
         {
-            return listaZadan.Where(z => z.Wykonawcy.Contains(p)).ToList();
+            List<Zadanie> zadanka=new List<Zadanie>();
+            foreach(Zadanie z in listaZadan)
+            {
+               foreach(Pracownik a in z.Wykonawcy)
+                {
+                    if (a.Equals(p))
+                        zadanka.Add(z);
+                }
+            }
+            return zadanka;
         }
         
         public static void sortujZadania(List<Zadanie> zadania)
         {
             zadania.Sort();
+        }
+
+        public bool maPracownika(Pracownik p)
+        {
+            foreach(Pracownik x in listaPracownikow)
+            {
+                if (x.Equals(p))
+                    return true;
+            }
+            return false;
         }
 
         public object Clone()
@@ -153,6 +176,24 @@ namespace Backend
             p.listaPracownikow = p1;
 
             return p;
+        }
+
+        public List<Zadanie> wybierzPrzydzielone()
+        {
+            return listaZadan.Where(z => z.Wykonawcy.Count() != 0 && !z.Wykonane).ToList();
+        }
+        public List<Zadanie> wybierzNieprzydzielone()
+        {
+            return listaZadan.Where(z => z.Wykonawcy.Count() == 0).ToList();
+        }
+        public List<Zadanie> wybierzZakonczone()
+        {
+            return listaZadan.Where(z => z.Wykonane).ToList();
+        }
+
+        public bool Equals(Projekt other)
+        {
+            return nazwa.Equals(other.nazwa) && Manager.Equals(other.manager);
         }
     }
 }

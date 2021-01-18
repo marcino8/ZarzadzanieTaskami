@@ -24,6 +24,7 @@
       </Pracownik>
     </Wykonawcy>
     <Uwagi />
+    <WaznoscZadania>Mało_istotne</WaznoscZadania>
   </Zadanie>
   <Zadanie>
     <CzasRozpoczecia>2021-02-20T00:00:00</CzasRozpoczecia>
@@ -49,6 +50,7 @@
       </Pracownik>
     </Wykonawcy>
     <Uwagi />
+    <WaznoscZadania>Istotne</WaznoscZadania>
   </Zadanie>
   <Zadanie>
     <CzasRozpoczecia>2021-02-20T00:00:00</CzasRozpoczecia>
@@ -81,5 +83,6 @@
       </Pracownik>
     </Wykonawcy>
     <Uwagi />
+    <WaznoscZadania>Krytycznie_ważne</WaznoscZadania>
   </Zadanie>
 </ArrayOfZadanie>

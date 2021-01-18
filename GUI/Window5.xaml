@@ -5,23 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Window5" Height="450" Width="800" Background="#545d6a">
+        Title="ProjektManager" Height="701.653" Width="1173.14" Background="#545d6a">
     <Grid>
         <TextBox x:Name="nazwaBox" FontSize="16" Padding="2, 4" HorizontalAlignment="Left" Height="34" TextWrapping="Wrap" Text="Nazwa projektu" VerticalAlignment="Top" Width="256" Margin="75,79,0,0"/>
         <TextBox x:Name="opisBox" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="96" TextWrapping="Wrap" Text="Opis projektu&#xA;" VerticalAlignment="Top" Width="256" Margin="75,118,0,0"/>
-        <ListBox x:Name="pracownicyListBox" HorizontalAlignment="Left" Height="83" VerticalAlignment="Top" Width="256" Margin="75,253,0,0"/>
-        <Button x:Name="dodajPracownikaButton" Content="Dodaj" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="99,351,0,0" Click="Button_Click"/>
-        <Button x:Name="usunPracownikaButton" Content="Usuń" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="219,351,0,0"/>
-        <ListBox x:Name="sponsorzyListBox" HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="250" Margin="431,79,0,0"/>
-        <Button x:Name="dodajSponsoraButton" Content="Dodaj" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="452,180,0,0" Click="Button_Click"/>
-        <Button x:Name="usunSponsoraButton" Content="Usuń" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="581,180,0,0"/>
-        <ListBox x:Name="zadaniaListBox" HorizontalAlignment="Left" Height="83" VerticalAlignment="Top" Width="250" Margin="431,253,0,0"/>
-        <Button x:Name="dodajZadanieButton" Content="Dodaj" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="452,351,0,0" Click="Button_Click"/>
-        <Button x:Name="usunZadanieButton" Content="Usuń" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="581,351,0,0"/>
+        <ListBox x:Name="pracownicyListBox" HorizontalAlignment="Left" Height="138" VerticalAlignment="Top" Width="311" Margin="75,253,0,0"/>
+        <Button x:Name="dodajPracownikaButton" Content="Dodaj" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="192,408,0,0" Click="Button_Click"/>
+        <Button x:Name="usunPracownikaButton" Content="Usuń" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="192,610,0,0" Click="usunPracownikaButton_Click"/>
+        <ListBox x:Name="sponsorzyListBox" HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="250" Margin="549,79,0,0" SelectionChanged="sponsorzyListBox_SelectionChanged"/>
+        <Button x:Name="dodajSponsoraButton" Content="Dodaj" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="642,180,0,0" Click="dodajSponsoraButton_Click"/>
+        <Button x:Name="usunSponsoraButton" Content="Usuń" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="926,180,0,0" Click="usunSponsoraButton_Click"/>
+        <ListBox x:Name="zadaniaListBox" HorizontalAlignment="Left" Height="178" VerticalAlignment="Top" Width="330" Margin="652,333,0,0"/>
+        <Button x:Name="dodajZadanieButton" Content="Dodaj" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="724,535,0,0" Click="dodajZadanieButton_Click"/>
+        <Button x:Name="usunZadanieButton" Content="Usuń" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="837,535,0,0" Click="usunZadanieButton_Click"/>
         <Label Foreground="White" FontSize="18" Height="34" Content="Nowy projekt&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,31,0,0" Width="256"/>
-        <Label Foreground="White" FontSize="18" Height="34" Content="Sponsorzy&#xA;"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="431,31,0,0" Width="250"/>
+        <Label Foreground="White" FontSize="18" Height="34" Content="Sponsorzy&#xA;"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="771,31,0,0" Width="250"/>
         <Label Foreground="White" FontSize="18" Height="34" Content="Pracownicy&#xD;&#xA;&#xA;"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,214,0,0" Width="256" />
-        <Label Foreground="White" FontSize="18" Height="34" Content="Zadania&#xD;&#xA;&#xA;"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="431,214,0,0" Width="250"/>
+        <Label Foreground="White" FontSize="18" Height="34" Content="Zadania&#xD;&#xA;&#xA;"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="771,280,0,0" Width="250"/>
+        <ListBox x:Name="sponsorzyWybraniListBox" HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="250" Margin="837,79,0,0" SelectionChanged="sponsorzyListBox_SelectionChanged"/>
+        <ListBox x:Name="pracownicyWybraniListBox" HorizontalAlignment="Left" Height="138" VerticalAlignment="Top" Width="311" Margin="75,457,0,0" SelectionChanged="pracownicyWybraniListBox_SelectionChanged"/>
+        <Button x:Name="utworzProjektButton" Content="Utwórz projekt" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="156" Margin="740,610,0,0" Click="utworzProjektbutton_Click"/>
 
     </Grid>
 </Window>

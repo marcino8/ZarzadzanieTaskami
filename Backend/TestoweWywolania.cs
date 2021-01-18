@@ -111,10 +111,17 @@ namespace Backend
                 }
             }
                
-            Console.WriteLine(b22.Lista_projektow.Where(a => a.ListaPracownikow.Contains(p1)).ToList().Count()); 
+            Console.WriteLine(b22.Lista_projektow.Where(a => a.ListaPracownikow.Contains(p1)).ToList().Count());
 
+            Console.WriteLine(p.maPracownika(p1));
 
+            foreach(var x in b2.wybierzOsobyNieWProjekcie(new Pracownik(), p))
+            {
+                Console.WriteLine(x);
+            }
 
+            ArchiwumProjektow archiwum = new ArchiwumProjektow();
+            archiwum.ZapiszArchiwum();
 
 
 

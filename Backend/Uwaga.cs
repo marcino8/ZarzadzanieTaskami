@@ -26,7 +26,7 @@ namespace Backend
 
         public override string ToString()
         {
-            return $"Zgłaszający: {_zglaszajacy.Imie} {_zglaszajacy.Nazwisko}";
+            return $"Zgłaszający: {_zglaszajacy.Imie} {_zglaszajacy.Nazwisko} Opis: {_tresc}";
         }
     }
 }

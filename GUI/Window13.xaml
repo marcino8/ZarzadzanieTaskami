@@ -5,18 +5,86 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Window13" Height="450" Width="800" Background="#545d6a">
+        Title="ProjektManager" Height="450" Width="800" Background="#545d6a">
     <Grid>
-        <TextBox x:Name="tematBox" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Temat&#xD;&#xA;" VerticalAlignment="Top" Width="350" Margin="214,167,0,0"/>
-        <TextBox x:Name="trescBox" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Treść&#xD;&#xA;&#xA;" VerticalAlignment="Top" Width="350" Margin="214,218,0,0"/>
-        <ComboBox x:Name="listaCombo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="350" Margin="214,272,0,0" Height="27" SelectionChanged="ComboBox_SelectionChanged">
-            <ComboBoxItem Content="Bardzo ważne"/>
-            <ComboBoxItem Content="Ważne"/>
-            <ComboBoxItem Content="Mało ważne"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="23*"/>
+            <ColumnDefinition Width="21*"/>
+        </Grid.ColumnDefinitions>
+        <Label Foreground="White" FontSize="18" Height="34" Content="Deadline&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="214,24,0,0" Width="256" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="listaComboDzien" HorizontalAlignment="Left" VerticalAlignment="Top" Width="59" Margin="214,74,0,0" Height="36" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="6"/>
+            <ComboBoxItem Content="7"/>
+            <ComboBoxItem Content="8"/>
+            <ComboBoxItem Content="9"/>
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="11"/>
+            <ComboBoxItem Content="12"/>
+            <ComboBoxItem Content="13"/>
+            <ComboBoxItem Content="14"/>
+            <ComboBoxItem Content="15"/>
+            <ComboBoxItem Content="16"/>
+            <ComboBoxItem Content="17"/>
+            <ComboBoxItem Content="18"/>
+            <ComboBoxItem Content="19"/>
+            <ComboBoxItem Content="20"/>
+            <ComboBoxItem Content="21"/>
+            <ComboBoxItem Content="22"/>
+            <ComboBoxItem Content="23"/>
+            <ComboBoxItem Content="24"/>
+            <ComboBoxItem Content="25"/>
+            <ComboBoxItem Content="26"/>
+            <ComboBoxItem Content="27"/>
+            <ComboBoxItem Content="28"/>
+            <ComboBoxItem Content="29"/>
+            <ComboBoxItem Content="30"/>
+            <ComboBoxItem Content="31"/>
         </ComboBox>
-        <Button x:Name="zatwierdzButton" Background="White" Opacity="0.9" Padding="0, 2" Height="27" Content="Zatwierdź" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="214,332,448,0" />
-        <Button x:Name="anulujButton" Background="White" Opacity="0.9" Padding="0, 2" Height="27" Content="Anuluj" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="434,332,228,0" />
-        <TextBox x:Name="tematBox_Copy" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="61" TextWrapping="Wrap" Text="Tutaj jakas data rozpoczęcia powinna być ale idk czy textbox moze byc czy jak&#xD;&#xA;" VerticalAlignment="Top" Width="350" Margin="214,77,0,0"/>
+        <ComboBox x:Name="listaComboMiesiac" HorizontalAlignment="Left" VerticalAlignment="Top" Width="56" Margin="288,74,0,0" Height="36" SelectionChanged="ComboBox_SelectionChanged">
+            <ComboBoxItem Content="1"/>
+            <ComboBoxItem Content="2"/>
+            <ComboBoxItem Content="3"/>
+            <ComboBoxItem Content="4"/>
+            <ComboBoxItem Content="5"/>
+            <ComboBoxItem Content="6"/>
+            <ComboBoxItem Content="7"/>
+            <ComboBoxItem Content="8"/>
+            <ComboBoxItem Content="9"/>
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="11"/>
+            <ComboBoxItem Content="12"/>
+        </ComboBox>
+        <ComboBox x:Name="listaComboRok" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77" Margin="366,74,0,0" Height="36" SelectionChanged="ComboBox_SelectionChanged" Grid.ColumnSpan="2">
+            <ComboBoxItem Content="2021"/>
+            <ComboBoxItem Content="2022"/>
+            <ComboBoxItem Content="2023"/>
+            <ComboBoxItem Content="2024"/>
+            <ComboBoxItem Content="2025"/>
+            <ComboBoxItem Content="2026"/>
+            <ComboBoxItem Content="2027"/>
+            <ComboBoxItem Content="2028"/>
+            <ComboBoxItem Content="2029"/>
+            <ComboBoxItem Content="2030"/>
+            <ComboBoxItem Content="2031"/>
+            <ComboBoxItem Content="2032"/>
+            <ComboBoxItem Content="2033"/>
+            <ComboBoxItem Content="2034"/>
+        </ComboBox>
+        <TextBox x:Name="tematBox" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Temat&#xD;&#xA;" VerticalAlignment="Top" Width="350" Margin="214,167,0,0" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="trescBox" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Treść&#xD;&#xA;&#xA;" VerticalAlignment="Top" Width="350" Margin="214,218,0,0" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="listaCombo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="350" Margin="214,272,0,0" Height="27" SelectionChanged="ComboBox_SelectionChanged" Grid.ColumnSpan="2">
+            <ComboBoxItem Content="Mało istotne"/>
+            <ComboBoxItem Content="Istotne"/>
+            <ComboBoxItem Content="Ważne"/>
+            <ComboBoxItem Content="Krytycznie ważne"></ComboBoxItem>
+        </ComboBox>
+        <Button x:Name="zatwierdzButton" Background="White" Opacity="0.9" Padding="0, 2" Height="27" Content="Zatwierdź" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="214,332,69.769,0" Click="zatwierdzButton_Click" />
+        <Button x:Name="anulujButton" Background="White" Opacity="0.9" Padding="0, 2" Height="27" Content="Anuluj" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="20.231,332,228,0" Click="anulujButton_Click" Grid.Column="1" />
 
     </Grid>
 </Window>

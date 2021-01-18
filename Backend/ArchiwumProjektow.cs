@@ -39,5 +39,15 @@ namespace Backend
                 bf.Serialize(sw, this.zakonczoneProjekty);
             }
         }
+
+        public void UsunTrwale(Projekt x)
+        {
+            zakonczoneProjekty.Remove(x);
+        }
+        
+        public void DodajDoArchiwum(Projekt x)
+        {
+            zakonczoneProjekty.Add(x);
+        }
     }
 }

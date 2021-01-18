@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Window4" Height="450" Width="800" Background="#545d6a">
+        Title="ProjektManager" Height="450" Width="800" Background="#545d6a">
     <Grid HorizontalAlignment="Right" Width="792">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -13,6 +13,7 @@
         <Label Content="       Wybierz projekt&#xA;" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Center" FontSize="38" FontWeight="Bold" Margin="157,28,167,0" Height="71" Width="468"/>
         <ListBox x:Name="projektyListBox" HorizontalAlignment="Left" Height="160" VerticalAlignment="Top" Width="560" Margin="120,120,0,0"/>
         <Button x:Name="potwierdzButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Potwierdź" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="325,310,337,0" Click="potwierdzButton_Click" />
+        <Button x:Name="archiwizujButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Archiwizuj" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="325,358,337,0" Click="archiwizujButton_Click" />
 
     </Grid>
 </Window>

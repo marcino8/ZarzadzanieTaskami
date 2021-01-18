@@ -76,6 +76,36 @@ namespace Backend
         {
             return lista_kont.Where(k => k.Uzytkownik.GetType().Equals(u.GetType())).ToList();
         }
+
+        public List<Uzytkownik> wybierzOsoby(Uzytkownik u)
+        {
+            List<Uzytkownik> list = new List<Uzytkownik>();
+            foreach (Konto k in lista_kont)
+            {
+                if (k.Uzytkownik.GetType().Equals(u.GetType()))
+                    list.Add(k.Uzytkownik);
+            }
+            return list;
+        }
+        public List<Uzytkownik> wybierzOsobyNieWProjekcie(Uzytkownik u, Projekt p)
+        {
+            List<Uzytkownik> list = new List<Uzytkownik>();
+            
+            foreach (Konto k in lista_kont)
+            {
+                if (k.Uzytkownik.GetType().Equals(u.GetType()))
+                {
+                    Console.WriteLine("TU WCHODZI");
+                    if (!p.maPracownika((Pracownik)k.Uzytkownik))
+                    {
+                        list.Add(k.Uzytkownik);
+                        Console.WriteLine("A TU?");
+                    }
+                }
+                    
+            }
+            return list;
+        }
          public int SprawdzKto(string login, string haslo)
         {
             if (SprawdzKonto(login, haslo))

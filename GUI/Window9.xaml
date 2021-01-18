@@ -5,13 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Window9" Height="450" Width="800" Background="#545d6a">
+        Title="ProjektManager" Height="450" Width="800" Background="#545d6a">
     <Grid>
-        <Label Foreground="White" FontSize="18" Height="34" Content="Pracownicy&#xD;&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="158,43,0,0"  Width="464"/>
-        <ListBox HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="464" Margin="158,86,0,0"/>
-        <Button x:Name="dodajButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Dodaj" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="158,308,504,0" />
-        <Button x:Name="przydzielButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Przydziel" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="327,308,335,0" />
-        <Button x:Name="usunButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Usuń" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="492,308,170,0" />
+        <Label Foreground="White" FontSize="18" Height="34" Content="Pracownicy&#xD;&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="345,10,-17,0"  Width="464"/>
+        <ListBox x:Name="listboxPozostali" HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="304" Margin="34,95,0,0" RenderTransformOrigin="0.5,0.5">
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.232"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.616"/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+        </ListBox>
+        <Button x:Name="dodajButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Dodaj" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="158,308,504,0" Click="dodajButton_Click" />
+        <Button x:Name="przydzielButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Zakończ przydzielanie" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="176" Margin="309,359,307,0" Click="przydzielButton_Click" />
+        <Button x:Name="usunButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Usuń" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="492,308,170,0" Click="usunButton_Click" />
+        <ListBox x:Name="listBoxWProjekcie" HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="304" Margin="449,95,0,0"/>
+        <Label Foreground="White" FontSize="18" Height="34" Content="Pozostali&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="134,49,0,0"  Width="464"/>
+        <Label Foreground="White" FontSize="18" Height="34" Content="W projekcie&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="545,49,-217,0"  Width="464"/>
 
     </Grid>
 </Window>

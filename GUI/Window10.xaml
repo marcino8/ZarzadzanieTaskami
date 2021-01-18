@@ -5,15 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Window10" Height="450" Width="800" Background="#545d6a">
+        Title="ProjektManager" Height="450" Width="800" Background="#545d6a">
     <Grid>
-        <ListBox HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="256" Margin="91,91,0,0"/>
-        <Label Foreground="White" FontSize="18" Height="34" Content="Wszyscy pracownicy&#xD;&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="91,48,0,0" Width="256
+        <ListBox x:Name="pracownicyLisBox" HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="256" Margin="91,91,0,0" SelectionChanged="pracownicyLisBox_SelectionChanged"/>
+        <Label Foreground="White" FontSize="18" Height="34" Content="Pracownik&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="91,48,0,0" Width="256
                "/>
-        <ListBox HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="256" Margin="439,91,0,0"/>
-        <Label Foreground="White" FontSize="18" Height="34" Content="Aktualny projekt&#xD;&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="439,48,0,0" Width="256" />
-        <Button x:Name="dodajButton" Content="Dodaj" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="116,309,0,0"/>
-        <Button x:Name="usunButton" Content="Usuń" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="236,309,0,0"/>
+        <ListBox x:Name="ZadaniaPracownikaLisBox" HorizontalAlignment="Left" Height="176" VerticalAlignment="Top" Width="256" Margin="439,91,0,0" SelectionChanged="ListBox_SelectionChanged"/>
+        <Label Foreground="White" FontSize="18" Height="34" Content="Zadania Pracownika&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="439,48,0,0" Width="256" />
+        <Button x:Name="dodajButton" Content="Przydziel" Background="White" Opacity="0.9" Padding="0, 4" Height="34" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="190,300,0,0" Click="dodajButton_Click"/>
 
     </Grid>
 </Window>

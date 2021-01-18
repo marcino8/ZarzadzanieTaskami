@@ -56,14 +56,17 @@ namespace GUI
                     {
                         case 1:
                             Window w1 = new Window4(b.wyciagnijUzytkownika(loginBox.Text, passwordBox.Password));
+                            MessageBox.Show($"Zalogowano jako {b.wyciagnijUzytkownika(loginBox.Text, passwordBox.Password)}");
                             w1.Show();
                             break;
                         case 2:
                             Window w2 = new Window4(b.wyciagnijUzytkownika(loginBox.Text, passwordBox.Password));
+                            MessageBox.Show($"Zalogowano jako {b.wyciagnijUzytkownika(loginBox.Text, passwordBox.Password)}");
                             w2.Show();
                             break;
                         case 3:
                             Window w3 = new Window3(b.wyciagnijUzytkownika(loginBox.Text, passwordBox.Password));
+                            MessageBox.Show($"Zalogowano jako {b.wyciagnijUzytkownika(loginBox.Text, passwordBox.Password)}");
                             w3.Show();
                             break;
                         default:

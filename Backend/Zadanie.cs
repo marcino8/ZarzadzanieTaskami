@@ -22,17 +22,25 @@ namespace Backend
         List<Uwaga> _uwagi;
 
         public DateTime CzasRozpoczecia { get => _czasRozpoczecia; set => _czasRozpoczecia = value; }
-        public DateTime CzasZakonczenia { get => _czasZakonczenia; set => _czasZakonczenia = value; }
+        public DateTime CzasZakonczenia { get => _czasZakonczenia; 
+            set {
+                    _czasZakonczenia = value;
+            } 
+        }
         public string Temat { get => _temat; set => _temat = value; }
         public string Tresc { get => _tresc; set => _tresc = value; }
         public bool Wykonane { get => _wykonane; set => _wykonane = value; }
         public bool Opoznienie { get => _opoznienie; set => _opoznienie = value; }
         public List<Pracownik> Wykonawcy { get => _wykonawcy; set => _wykonawcy = value; }
         public List<Uwaga> Uwagi { get => _uwagi; set => _uwagi = value; }
+        public WaznoscZadania WaznoscZadania { get => _waznoscZadania; set => _waznoscZadania = value; }
 
         public Zadanie()
         {
-
+            _uwagi = new List<Uwaga>();
+            _wykonawcy = new List<Pracownik>();
+            CzasRozpoczecia = DateTime.MinValue;
+            CzasZakonczenia = DateTime.MinValue;
         }
         public Zadanie(string czasRozpoczecia, string czasZakonczenia, string temat, string tresc, List<Pracownik> wykonawcy, List<Uwaga> uwagi, WaznoscZadania waznoscZadania)
         {
@@ -52,11 +60,15 @@ namespace Backend
             _uwagi = uwagi;
             _waznoscZadania = waznoscZadania;
         }
-        public string toShortString()
-        {
-            return $"temat: {Temat}, tresc: {Tresc}, \n";
-        }
+
         public override string ToString()
+        {
+            return $"temat: {Temat} tresc: {Tresc} ważność:{WaznoscZadania}" +
+                $" deadline{CzasZakonczenia.ToShortDateString()}";
+
+        }
+
+        public string ToLongString()
         {
             StringBuilder sb = new StringBuilder();
             foreach(var x in Wykonawcy)

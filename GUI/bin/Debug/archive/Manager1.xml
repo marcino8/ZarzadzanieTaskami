@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Manager xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Imie>Krzysztof</Imie>
-  <Nazwisko>Jarzyna</Nazwisko>
-  <DataUrodzenia>1967-01-01T00:00:00</DataUrodzenia>
-  <Pesel>99906666211</Pesel>
-  <Email>krzysztofjarzyna@gmail.com</Email>
+  <Imie>Filip</Imie>
+  <Nazwisko>Dobry</Nazwisko>
+  <DataUrodzenia>1991-12-03T00:00:00</DataUrodzenia>
+  <Pesel>99092455822</Pesel>
+  <Email>admin@gmail.com</Email>
 </Manager>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfZadanie xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Zadanie>
-    <CzasRozpoczecia>2021-01-20T00:00:00</CzasRozpoczecia>
-    <CzasZakonczenia>2021-02-12T00:00:00</CzasZakonczenia>
-    <Temat>Skonczyc budowe fortepianu</Temat>
-    <Tresc>Naprawić struny, wymienić klawisze</Tresc>
-    <Wykonane>false</Wykonane>
+    <CzasRozpoczecia>2021-01-18T02:32:56.8177928+01:00</CzasRozpoczecia>
+    <CzasZakonczenia>2021-01-10T00:00:00</CzasZakonczenia>
+    <Temat>Zrobić gui</Temat>
+    <Tresc>Dodać okienka według schematu 
+</Tresc>
+    <Wykonane>true</Wykonane>
     <Opoznienie>false</Opoznienie>
     <Wykonawcy>
       <Pracownik>
@@ -15,71 +16,34 @@
         <Pesel>99900022211</Pesel>
         <Email>korneliakl@gmail.com</Email>
       </Pracownik>
-      <Pracownik>
-        <Imie>Jola</Imie>
-        <Nazwisko>Pront</Nazwisko>
-        <DataUrodzenia>2010-01-10T00:00:00</DataUrodzenia>
-        <Pesel>99111154611</Pesel>
-        <Email>jopr@gmail.com</Email>
-      </Pracownik>
     </Wykonawcy>
     <Uwagi />
+    <WaznoscZadania>Krytycznie_ważne</WaznoscZadania>
   </Zadanie>
   <Zadanie>
-    <CzasRozpoczecia>2021-02-20T00:00:00</CzasRozpoczecia>
-    <CzasZakonczenia>2021-02-24T00:00:00</CzasZakonczenia>
-    <Temat>Skonczyc budowe tabelki</Temat>
-    <Tresc>Zebrac wszystkie pliki z projektu i wrzucic w tabele</Tresc>
+    <CzasRozpoczecia>2021-01-18T02:33:36.4189794+01:00</CzasRozpoczecia>
+    <CzasZakonczenia>2021-01-12T00:00:00</CzasZakonczenia>
+    <Temat>Temat
+Napisać backend</Temat>
+    <Tresc>Napisac silnik dzialania aplikacji
+</Tresc>
     <Wykonane>false</Wykonane>
     <Opoznienie>false</Opoznienie>
-    <Wykonawcy>
-      <Pracownik>
-        <Imie>Kornelia</Imie>
-        <Nazwisko>Kłopecka</Nazwisko>
-        <DataUrodzenia>2000-10-10T00:00:00</DataUrodzenia>
-        <Pesel>99900022211</Pesel>
-        <Email>korneliakl@gmail.com</Email>
-      </Pracownik>
-      <Pracownik>
-        <Imie>Agnieszka</Imie>
-        <Nazwisko>Mazik</Nazwisko>
-        <DataUrodzenia>2022-10-12T00:00:00</DataUrodzenia>
-        <Pesel>99901562211</Pesel>
-        <Email>agumaz@gmail.com</Email>
-      </Pracownik>
-    </Wykonawcy>
+    <Wykonawcy />
     <Uwagi />
+    <WaznoscZadania>Krytycznie_ważne</WaznoscZadania>
   </Zadanie>
   <Zadanie>
-    <CzasRozpoczecia>2021-02-20T00:00:00</CzasRozpoczecia>
-    <CzasZakonczenia>2021-03-24T00:00:00</CzasZakonczenia>
-    <Temat>Przygotowanie GUI aplikacji</Temat>
-    <Tresc>Naprawić struny, wymienić klawisze</Tresc>
+    <CzasRozpoczecia>2021-01-18T02:34:25.0255477+01:00</CzasRozpoczecia>
+    <CzasZakonczenia>2021-01-06T00:00:00</CzasZakonczenia>
+    <Temat>Przygotować dokumentacje
+</Temat>
+    <Tresc>Dodać komentarze i przygotować pod tworzenie automatycznej dokumentacji
+</Tresc>
     <Wykonane>false</Wykonane>
     <Opoznienie>false</Opoznienie>
-    <Wykonawcy>
-      <Pracownik>
-        <Imie>Kornelia</Imie>
-        <Nazwisko>Kłopecka</Nazwisko>
-        <DataUrodzenia>2000-10-10T00:00:00</DataUrodzenia>
-        <Pesel>99900022211</Pesel>
-        <Email>korneliakl@gmail.com</Email>
-      </Pracownik>
-      <Pracownik>
-        <Imie>Jola</Imie>
-        <Nazwisko>Pront</Nazwisko>
-        <DataUrodzenia>2010-01-10T00:00:00</DataUrodzenia>
-        <Pesel>99111154611</Pesel>
-        <Email>jopr@gmail.com</Email>
-      </Pracownik>
-      <Pracownik>
-        <Imie>Julia</Imie>
-        <Nazwisko>Mala</Nazwisko>
-        <DataUrodzenia>2001-11-10T00:00:00</DataUrodzenia>
-        <Pesel>22412663451</Pesel>
-        <Email>jumal@gmail.com</Email>
-      </Pracownik>
-    </Wykonawcy>
+    <Wykonawcy />
     <Uwagi />
+    <WaznoscZadania>Krytycznie_ważne</WaznoscZadania>
   </Zadanie>
 </ArrayOfZadanie>

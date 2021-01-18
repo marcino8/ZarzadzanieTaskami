@@ -27,10 +27,10 @@ namespace GUI
         {
             uzytkownik = u;
             InitializeComponent();
+            if (u.GetType().Equals(new Pracownik().GetType()))
+                archiwizujButton.Visibility = Visibility.Hidden;
             BazaProjektow bp = BazaProjektow.Wczytaj_Baze();
-            lista = new ObservableCollection<Projekt>(bp.wyszukajProjekty(u));
-            MessageBox.Show($"{ bp.wyszukajProjekty(u).Count() }{u.toShortString()}");
-            
+            lista = new ObservableCollection<Projekt>(bp.wyszukajProjekty(u));   
             projektyListBox.ItemsSource = lista;
         }
 
@@ -40,8 +40,32 @@ namespace GUI
             {
                 Projekt x = (Projekt)projektyListBox.SelectedItem;
                 this.Hide();
-                Window w1 = new Window7(uzytkownik, x);
-                w1.Show();
+                if(uzytkownik is Sponsor || uzytkownik is Pracownik)
+                {
+                    Window w1 = new Window7(uzytkownik, x);
+                    w1.Show();
+                }
+                if(uzytkownik is Manager)
+                {
+                    Window w1 = new Window6(uzytkownik, x);
+                    w1.Show();
+                }
+                
+            }
+        }
+
+        private void archiwizujButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (projektyListBox.SelectedIndex > -1)
+            {
+                Projekt x = (Projekt)projektyListBox.SelectedItem;
+                BazaProjektow b=BazaProjektow.Wczytaj_Baze();
+                b.UsunZBazy(x);
+                lista.Remove(x);
+                b.Zapisz_Baze();
+                ArchiwumProjektow a = ArchiwumProjektow.WczytajArchiwum();
+                a.DodajDoArchiwum(x);
+                a.ZapiszArchiwum();
             }
         }
     }

@@ -52,17 +52,25 @@ namespace GUI
                        int.Parse(listaComboDzien.Text), int.Parse(listaComboMiesiac.Text), int.Parse(listaComboRok.Text),
                        peselBox.Text, emailBox.Text);
                 }
-                if (listaCombo.Text == "Pracownik")
+                if (listaCombo.Text == "Sponsor")
                 {
                     u1 = new Sponsor(imieBox.Text, nazwiskoBox.Text,
                      int.Parse(listaComboDzien.Text), int.Parse(listaComboMiesiac.Text), int.Parse(listaComboRok.Text),
                         peselBox.Text, emailBox.Text);
                 }
-                if (listaCombo.Text == "Pracownik")
+                if (listaCombo.Text == "Manager")
                 {
-                    u1 = new Manager(imieBox.Text, nazwiskoBox.Text,
+                    try
+                    {
+                        u1 = new Manager(imieBox.Text, nazwiskoBox.Text,
                     int.Parse(listaComboDzien.Text), int.Parse(listaComboMiesiac.Text), int.Parse(listaComboRok.Text),
                     peselBox.Text, emailBox.Text);
+                    }
+                    catch(NotAPeselException)
+                    {
+                        MessageBox.Show("Nieprawidłowy pesel!");
+                    }
+                    
                 }
 
                 Konto k1 = new Konto(u1, loginBox.Text, passwordBox.Password.ToString());

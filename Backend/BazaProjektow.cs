@@ -159,13 +159,77 @@ namespace Backend
 
         public void DodajDoBazy(Projekt p)
         {
-            lista_projektow.Add(p);
             ilosc_projektow++;
+            lista_projektow.Add(p);
         }
 
-        public void UsunZBazy(Projekt p)
+        public bool UsunZBazy(Projekt p)
         {
-            lista_projektow.Remove(p);
+            bool t = false;
+            ilosc_projektow--;
+            int a=lista_projektow.IndexOf(p);
+            if (File.Exists($"archive/Nazwa{a}.xml"))
+            {
+                File.Delete($"archive/Nazwa{a}.xml");
+            }
+            if (File.Exists($"archive/Opis{a}.xml"))
+            {
+                File.Delete($"archive/Opis{a}.xml");
+            }
+            if (File.Exists($"archive/Manager{a}.xml"))
+            {
+                File.Delete($"archive/Manager{a}.xml");
+            }
+            if (File.Exists($"archive/Zadania{a}.xml"))
+            {
+                File.Delete($"archive/Zadania{a}.xml");
+            }
+            if (File.Exists($"archive/ZadaniaWykonane{a}.xml"))
+            {
+                File.Delete($"archive/ZadaniaWykonane{a}.xml");
+            }
+            if (File.Exists($"archive/Pracownicy{a}.xml"))
+            {
+                File.Delete($"archive/Pracownicy{a}.xml");
+            }
+            if (File.Exists($"archive/Sponsorzy{a}.xml"))
+            {
+                File.Delete($"archive/Sponsorzy{a}.xml");
+            }
+            t=lista_projektow.Remove(p);
+            for(int i = a + 1; i < ilosc_projektow; i++)
+            {
+                if (File.Exists($"archive/Nazwa{i}.xml"))
+                {
+                    File.Move($"archive/Nazwa{i}.xml", $"archive/Nazwa{i - 1}.xml");
+                }
+                if (File.Exists($"archive/Opis{i}.xml"))
+                {
+                    File.Move($"archive/Opis{i}.xml", $"archive/Opis{i - 1}.xml");
+                }
+                if (File.Exists($"archive/Manager{i}.xml"))
+                {
+                    File.Move($"archive/Manager{i}.xml", $"archive/Manager{i - 1}.xml");
+                }
+                if (File.Exists($"archive/Zadania{i}.xml"))
+                {
+                    File.Move($"archive/Zadania{i}.xml", $"archive/Zadania{i - 1}.xml");
+                }
+                if (File.Exists($"archive/ZadaniaWykonane{i}.xml"))
+                {
+                    File.Move($"archive/ZadaniaWykonane{i}.xml", $"archive/ZadaniaWykonane{i - 1}.xml");
+                }
+                if (File.Exists($"archive/Pracownicy{i}.xml"))
+                {
+                    File.Move($"archive/Pracownicy{i}.xml", $"archive/Pracownicy{i - 1}.xml");
+                }
+                if (File.Exists($"archive/Sponsorzy{i}.xml"))
+                {
+                    File.Move($"archive/Sponsorzy{i}.xml", $"archive/Sponsorzy{i - 1}.xml");
+                }
+            }
+            return t;
+
         }
 
         public void PrzeniesDoArchiwum(Projekt p)

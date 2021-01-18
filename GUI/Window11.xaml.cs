@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Backend;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +21,31 @@ namespace GUI
     /// </summary>
     public partial class Window11 : Window
     {
-        public Window11()
+        ObservableCollection<Zadanie> listaZadan;
+        Uzytkownik uzytkownik;
+        public Window11(List<Zadanie> list, Uzytkownik u)
         {
             InitializeComponent();
+            uzytkownik = u;
+            listaZadan = new ObservableCollection<Zadanie>(list);
+            zadaniaListBoxLewy.ItemsSource = listaZadan;
+
+        }
+
+        private void zadaniaListBoxLewy_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void wyswietlButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (zadaniaListBoxLewy.SelectedIndex > -1)
+            {
+                Zadanie x = (Zadanie)zadaniaListBoxLewy.SelectedItem;
+                Window w1 = new Window12(x,uzytkownik);
+                w1.ShowDialog();
+
+            }
         }
     }
 }

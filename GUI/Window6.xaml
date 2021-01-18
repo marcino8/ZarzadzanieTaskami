@@ -5,20 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Window6" Height="450" Width="800" Background="#545d6a">
+        Title="ProjektManager" Height="450" Width="800" Background="#545d6a">
     <Grid>
-        <ListBox x:Name="przydzieloneListBox" HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="256" Margin="75,61,0,0"/>
+        <ListBox x:Name="przydzieloneListBox" HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="256" Margin="75,61,0,0" SelectionChanged="przydzieloneListBox_SelectionChanged"/>
         <ListBox x:Name="noweListBox" HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="256" Margin="431,61,0,0"/>
         <Label Foreground="White" FontSize="18" Height="34" Content="Przydzielone zadania&#xD;&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,23,0,0" Width="256"/>
         <Label Foreground="White" FontSize="18" Height="34" Content="Nowe zadania&#xD;&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="431,22,0,0" Width="256"/>
-        <Button x:Name="zakonczoneButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Wyświetl zakończone" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="75,180,461,0" />
-        <Button x:Name="pracownicyButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Wyświetl pracowników" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="75,231,461,0" />
-        <Button x:Name="chatButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Wejdź na chat" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="75,282,461,0" />
-        <Button x:Name="uwagiButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Przeglądaj uwagi" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="75,331,461,0" />
-        <Button x:Name="sortujButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Sortuj" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="431,180,105,0" />
-        <Button x:Name="przydzielButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Przydziel" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="431,231,105,0" />
-        <Button x:Name="zatwiedzButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Zatwierdź" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="431,282,105,0" />
-        <Button x:Name="uwagaButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Dodaj uwagę" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="431,331,105,0" />
-
+        <Button x:Name="zakonczoneButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Wyświetl zakończone" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="75,231,461,0" Click="zakonczoneButton_Click" />
+        <Button x:Name="pracownicyButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Wyświetl pracowników" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="75,281,461,0" Click="pracownicyButton_Click" />
+        <Button x:Name="uwagiButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Edytuj zadania/Dodaj uwagi" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="75,331,461,0" Click="uwagiButton_Click" />
+        <Button x:Name="sortujButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Sortuj" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="431,180,105,0" Click="sortujButton_Click" />
+        <Button x:Name="przydzielButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Przydziel" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="431,231,105,0" Click="przydzielButton_Click" />
+        <Button x:Name="zadanieButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Dodaj Zadanie" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="431,331,105,0" Click="uwagaButton_Click" />
+        <Button x:Name="zadanieUsunButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Usuń zadanie" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="431,281,105,0" Click="zadanieUsunClick" />
+        <Button x:Name="sortujButton_Copy" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Sortuj" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="75,180,461,0" Click="sortujButton2_Click" />
+        <Button x:Name="zapiszZmianyButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Zapisz zmiany" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="251,375,285,0" Click="zapiszjButton2_Click" />
     </Grid>
 </Window>

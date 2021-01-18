@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
-        Title="Window11" Height="450" Width="800" Background="#545d6a">
+        Title="ProjektManager" Height="450" Width="800" Background="#545d6a">
     <Grid>
-        <ListBox x:Name="zadaniaListBoxLewy" HorizontalAlignment="Left" Height="210" VerticalAlignment="Top" Width="593" Margin="91,43,0,0"/>
-        <Button x:Name="wyswietlButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Wyświetl" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="91,319,445,0" />
+        <ListBox x:Name="zadaniaListBoxLewy" HorizontalAlignment="Left" Height="210" VerticalAlignment="Top" Width="593" Margin="91,43,0,0" SelectionChanged="zadaniaListBoxLewy_SelectionChanged"/>
+        <Button x:Name="wyswietlButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Wyświetl" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="91,319,445,0" Click="wyswietlButton_Click" />
         <Button x:Name="usunButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Usuń" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="256" Margin="428,319,108,0" />
     </Grid>
 </Window>

@@ -42,3 +42,5 @@ C:\Users\user\Documents\GIT\ProjektProgramowanie\GUI\bin\Debug\Backend.exe
 C:\Users\user\Documents\GIT\ProjektProgramowanie\GUI\bin\Debug\Backend.pdb
 C:\Users\user\Documents\GIT\ProjektProgramowanie\GUI\bin\Debug\Backend.exe.config
 C:\Users\user\Documents\GIT\ProjektProgramowanie\GUI\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\user\Documents\GIT\ProjektProgramowanie\GUI\obj\Debug\Window14.g.cs
+C:\Users\user\Documents\GIT\ProjektProgramowanie\GUI\obj\Debug\Window14.baml
