@@ -8,17 +8,48 @@ using static Backend.Enumy;
 
 namespace Backend
 {
+    /// <summary>
+    /// Zadanie w projekcie
+    /// </summary>
     [Serializable]
     public class Zadanie : IComparable<Zadanie>
     {
+        /// <summary>
+        /// Czas rozpoczecia zadania
+        /// </summary>
         DateTime _czasRozpoczecia;
+        /// <summary>
+        /// Czas zakonczenia zadania
+        /// </summary>
         DateTime _czasZakonczenia;
+        /// <summary>
+        /// Temat zadania
+        /// </summary>
         string _temat;
+        /// <summary>
+        /// Tresc zadania
+        /// </summary>
         string _tresc;
+        /// <summary>
+        /// Czy zadanie jest wykonane
+        /// </summary>
         bool _wykonane;
+        /// <summary>
+        /// Czy zadanie ma opoznienie
+        /// </summary>
         bool _opoznienie;
+        /// <summary>
+        /// Jak wazne jest zadanie
+        /// <see cref="Enumy.WaznoscZadania"/>
+        /// </summary>
         WaznoscZadania _waznoscZadania;
+        /// <summary>
+        /// Lista pracownikow pracujacych nad zadaniem
+        /// </summary>
         List<Pracownik> _wykonawcy;
+        /// <summary>
+        /// Lista uwag do zadania
+        /// </summary>
         List<Uwaga> _uwagi;
 
         public DateTime CzasRozpoczecia { get => _czasRozpoczecia; set => _czasRozpoczecia = value; }
@@ -60,14 +91,23 @@ namespace Backend
             _uwagi = uwagi;
             _waznoscZadania = waznoscZadania;
         }
-
+        /// <summary>
+        /// Przeładowanie toString()
+        /// </summary>
+        /// <returns>Zwraca informacje o zadaniu jako tekst:
+        /// temat zadania, tresc zadania, waznosc zadania i date zakonczenia zadania</returns>
         public override string ToString()
         {
             return $"temat: {Temat} tresc: {Tresc} ważność:{WaznoscZadania}" +
                 $" deadline{CzasZakonczenia.ToShortDateString()}";
 
         }
-
+        /// <summary>
+        /// Informacje o zadaniu
+        /// </summary>
+        /// <returns>Zwraca informacje o zadaniu jako tekst:
+        /// temat zadania, tresc zadania, waznosc zadania, date zakonczenia zadania,
+        /// wszystkich wykonawcow oraz uwagi</returns>
         public string ToLongString()
         {
             StringBuilder sb = new StringBuilder();
@@ -89,17 +129,28 @@ namespace Backend
                 $"Wykonawcy:\n{sb.ToString()}" +
                 $"\nUwagi:\n{sb2.ToString()}";
         }
-
+        /// <summary>
+        /// Metoda dodaje uwagę do zadania
+        /// </summary>
+        /// <param name="u">Uwaga do dodania</param>
         public void dodajUwage(Uwaga u)
         {
             _uwagi.Add(u);
         }
-
+        /// <summary>
+        /// Metoda oznacza zadanie jako wykonane
+        /// </summary>
         public void oznaczJakoZakonczone()
         {
             _wykonane = true;
         }
-
+        /// <summary>
+        /// Metoda porównuje Zadania względem czasów zakończenia
+        /// </summary>
+        /// <param name="other">Zadanie z którym porównujemy</param>
+        /// <returns>1 - jeśli zadanie z którym porównujemy kończy się później
+        /// 0 - jeśli zadania kończą się tego samego dnia
+        /// -1 - jeśli zadanie z którym porównujemy kończy się wcześniej</returns>
         public int CompareTo(Zadanie other)
         {
             return CzasZakonczenia.CompareTo(other.CzasZakonczenia);

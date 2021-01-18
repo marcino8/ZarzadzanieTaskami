@@ -8,16 +8,34 @@ using System.Xml.Serialization;
 
 namespace Backend
 {
+    /// <summary>
+    /// Klasa bazowa dla uzytkownika, opisuje wszystkie cechy łączące Sponsora Pracownika i Managera
+    /// </summary>
     [Serializable]
     [XmlInclude(typeof(Sponsor))]
     [XmlInclude(typeof(Pracownik))]
     [XmlInclude(typeof(Manager))]
     public abstract class Uzytkownik
     {
+        /// <summary>
+        /// Imie uzytkownika
+        /// </summary>
         string _imie;
+        /// <summary>
+        /// Nazwisko uzytkownika
+        /// </summary>
         string _nazwisko;
+        /// <summary>
+        /// Data urodzenia uzytkownika
+        /// </summary>
         DateTime _dataUrodzenia;
+        /// <summary>
+        /// Pesel uzytkownika
+        /// </summary>
         string _pesel;
+        /// <summary>
+        /// Email uzytkownika
+        /// </summary>
         string _email;
 
         public string Imie { get => _imie; set => _imie = value; }
@@ -55,13 +73,19 @@ namespace Backend
             _pesel = pesel;
             _email = email;
         }
-
+        /// <summary>
+        /// Przeładowanie toString()
+        /// </summary>
+        /// <returns>Zwraca pełne informacje o uzytkowniku</returns>
         public override string ToString()
         {
             return $"{_imie} {_nazwisko}, data urodzenia: {_dataUrodzenia.ToShortDateString()} " +
                 $"pesel: {_pesel}, email: {_email}";
         }
-
+        /// <summary>
+        /// Metoda wypisuje imie i nazwisko uzytkownika
+        /// </summary>
+        /// <returns>Imie i nazwisko uzytkownika</returns>
         public string toShortString()
         {
             return $"{_imie} {_nazwisko}";

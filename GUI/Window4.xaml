@@ -10,6 +10,12 @@
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <DockPanel Grid.ColumnSpan="3">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="WYLOGUJ" Click="wyloguj"/>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
         <Label Content="       Wybierz projekt&#xA;" VerticalAlignment="Top" Foreground="White" HorizontalAlignment="Center" FontSize="38" FontWeight="Bold" Margin="157,28,167,0" Height="71" Width="468"/>
         <ListBox x:Name="projektyListBox" HorizontalAlignment="Left" Height="160" VerticalAlignment="Top" Width="560" Margin="120,120,0,0"/>
         <Button x:Name="potwierdzButton" Background="White" Opacity="0.9" Padding="0, 4" Height="34" Content="Potwierdź" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="130" Margin="325,310,337,0" Click="potwierdzButton_Click" />

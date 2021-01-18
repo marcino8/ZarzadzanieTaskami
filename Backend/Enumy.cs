@@ -6,9 +6,15 @@ using System.Threading.Tasks;
 
 namespace Backend
 {
+    ///<summary>
+    ///Klasa przechowywująca enumy
+    ///</summary>
     [Serializable]
     public class Enumy
     {
+        ///<summary>
+        ///Enum dotyczący ważności zadania
+        ///</summary>
         public enum WaznoscZadania
         {
             Mało_istotne = 1,

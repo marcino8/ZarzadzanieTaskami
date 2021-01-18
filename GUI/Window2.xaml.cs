@@ -48,27 +48,48 @@ namespace GUI
                 //public Uzytkownik(string imie, string nazwisko, int dd, int mm, int yyyy, string pesel, string email)
                 if (listaCombo.Text == "Pracownik")
                 {
-                    u1 = new Pracownik(imieBox.Text, nazwiskoBox.Text, 
-                       int.Parse(listaComboDzien.Text), int.Parse(listaComboMiesiac.Text), int.Parse(listaComboRok.Text),
-                       peselBox.Text, emailBox.Text);
+                    try
+                    {
+                        u1 = new Pracownik(imieBox.Text, nazwiskoBox.Text,
+                         int.Parse(listaComboDzien.Text), int.Parse(listaComboMiesiac.Text), int.Parse(listaComboRok.Text),
+                        peselBox.Text, emailBox.Text);
+                    }
+                    catch (NotAPeselException ex)
+                    {
+
+                        MessageBox.Show("Nieprawidłowy pesel!");
+                        ex.ToString();
+                    }
                 }
                 if (listaCombo.Text == "Sponsor")
                 {
-                    u1 = new Sponsor(imieBox.Text, nazwiskoBox.Text,
+                    try
+                    {
+                        u1 = new Sponsor(imieBox.Text, nazwiskoBox.Text,
                      int.Parse(listaComboDzien.Text), int.Parse(listaComboMiesiac.Text), int.Parse(listaComboRok.Text),
                         peselBox.Text, emailBox.Text);
+                    }
+                    catch (NotAPeselException ex)
+                    {
+
+                        MessageBox.Show("Nieprawidłowy pesel!");
+                        ex.ToString();
+                    }
+
                 }
                 if (listaCombo.Text == "Manager")
                 {
                     try
                     {
-                        u1 = new Manager(imieBox.Text, nazwiskoBox.Text,
+                    u1 = new Manager(imieBox.Text, nazwiskoBox.Text,
                     int.Parse(listaComboDzien.Text), int.Parse(listaComboMiesiac.Text), int.Parse(listaComboRok.Text),
                     peselBox.Text, emailBox.Text);
                     }
-                    catch(NotAPeselException)
+                    catch (NotAPeselException ex)
                     {
+                        
                         MessageBox.Show("Nieprawidłowy pesel!");
+                        ex.ToString();
                     }
                     
                 }

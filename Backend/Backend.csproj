@@ -42,7 +42,6 @@
     <Compile Include="BazaProjektow.cs" />
     <Compile Include="Enumy.cs" />
     <Compile Include="Konto.cs" />
-    <Compile Include="LiveChat.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="NieprawidloweRamyCzasoweException.cs" />
     <Compile Include="NotAPeselException.cs" />

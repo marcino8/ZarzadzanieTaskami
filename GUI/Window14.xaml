@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:GUI"
         mc:Ignorable="d"
         Title="ProjektManager" Height="450" Width="800" Background="#545d6a">
-<Grid>
+    <Grid>
         <TextBox x:Name="komentarzBox" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="56" TextWrapping="Wrap" Text="Komentarz&#xA;" VerticalAlignment="Top" Width="599" Margin="92,170,0,0"/>
         <Button x:Name="dodajUwageBTn" Background="White" Opacity="0.9" Padding="0, 4" Height="35" Content="Dodaj uwagę" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Top" Width="106" Margin="333,259,353,0" Click="dodajUwageBTn_Click" />
     </Grid>

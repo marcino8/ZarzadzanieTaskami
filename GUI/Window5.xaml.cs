@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -34,7 +35,7 @@ namespace GUI
             BazaKont bk = BazaKont.Wczytaj_Baze();
             wszyscyPracownicy = new ObservableCollection<Uzytkownik>(bk.wybierzOsoby(new Pracownik()));
             wszyscySponsorzy = new ObservableCollection<Uzytkownik>(bk.wybierzOsoby(new Sponsor()));
-            MessageBox.Show($"{ bk.wybierzOsoby(u).Count() }{u.toShortString()}");
+            System.Windows.MessageBox.Show($"{ bk.wybierzOsoby(u).Count() }{u.toShortString()}");
             wybraniPracownicy = new ObservableCollection<Uzytkownik>();
             wybraniSponsorzy = new ObservableCollection<Uzytkownik>();
             zadania = new ObservableCollection<Zadanie>();
@@ -100,7 +101,7 @@ namespace GUI
             Zadanie z = new Zadanie();
             Window w = new Window13(z);
             w.ShowDialog();
-            MessageBox.Show("a");
+            System.Windows.MessageBox.Show("a");
             if (w.DialogResult.HasValue)
             {
                 if (w.DialogResult.Value)
@@ -144,6 +145,24 @@ namespace GUI
             }
             
         } // public Projekt(string nazwa, string opis, Manager manager,
+
+        private void wyloguj(object sender, RoutedEventArgs e)
+        {
+
+            DialogResult d=System.Windows.Forms.MessageBox.Show("Czy chcesz wyjść?", "Niezapisane zmiany zostaną utracone", MessageBoxButtons.YesNo);
+            
+            if (d.Equals(System.Windows.Forms.DialogResult.Yes))
+            {
+                this.Close();
+                Window w1 = new Window1();
+                w1.Show();
+            }
+            else if (d.Equals(System.Windows.Forms.DialogResult.Yes))
+            {
+                ;
+            }
+            
+        }
         //List<Zadanie> listaZadan, List<Zadanie> wykonaneZadania, List<Pracownik> listaPracownikow, List<Sponsor> listaSponsorow)
     }
 }

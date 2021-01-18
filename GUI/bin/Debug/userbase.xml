@@ -58,4 +58,11 @@
       <Email>admin@gmail.com</Email>
     </Uzytkownik>
   </Konto>
+  <Konto>
+    <Login>asd</Login>
+    <Haslo>ads</Haslo>
+    <Uzytkownik xsi:type="Pracownik">
+      <DataUrodzenia>0001-01-01T00:00:00</DataUrodzenia>
+    </Uzytkownik>
+  </Konto>
 </ArrayOfKonto>

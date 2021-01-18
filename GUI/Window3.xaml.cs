@@ -8,6 +8,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -43,8 +44,26 @@ namespace GUI
 
         private void archiwumButton_Click(object sender, RoutedEventArgs e)
         {
-            Window w1 = new Window8();
+            this.Close();
+            Window w1 = new Window8(uzytkownik);
             w1.ShowDialog();
+        }
+        private void wyloguj(object sender, RoutedEventArgs e)
+        {
+
+            DialogResult d = System.Windows.Forms.MessageBox.Show("Czy chcesz wyjść? Niezapisane zmiany zostaną utracone", "Ostrzeżenie!", MessageBoxButtons.YesNo);
+
+            if (d.Equals(System.Windows.Forms.DialogResult.Yes))
+            {
+                this.Close();
+                Window w1 = new Window1();
+                w1.Show();
+            }
+            else if (d.Equals(System.Windows.Forms.DialogResult.Yes))
+            {
+                ;
+            }
+
         }
     }
 }

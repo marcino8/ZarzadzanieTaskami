@@ -3,6 +3,9 @@ using System.Runtime.Serialization;
 
 namespace Backend
 {
+    ///<summary>
+    ///Klasa wyjątku służąca do sprawdzania czy pesel napewno ma 11 znaków
+    ///</summary>
     [Serializable]
     public class NotAPeselException : Exception
     {

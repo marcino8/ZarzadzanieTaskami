@@ -8,10 +8,19 @@ using System.Xml.Serialization;
 
 namespace Backend
 {
+    ///<summary>
+    ///Klasa przechowywująca aktualne projekty
+    ///</summary>
     [Serializable]
     public class BazaProjektow 
     {
+        /// <summary>
+        /// Lista przechowywująca wszystkie aktualne projekty
+        /// </summary>
         List<Projekt> lista_projektow;
+        /// <summary>
+        /// Zmienna przechowywująca ilość projektów w bazie
+        /// </summary>
         int ilosc_projektow;
 
         public List<Projekt> Lista_projektow { get => lista_projektow; set => lista_projektow = value; }
@@ -21,7 +30,12 @@ namespace Backend
             this.lista_projektow = new List<Projekt>();
             ilosc_projektow = 0;
         }
-
+        /// <summary>
+        /// Metoda wczytywująca bazę projektów z Plików xml w folderze archive
+        /// </summary>
+        /// <returns>
+        /// Zwraca wczytany obiekt klasy BazaProjektow
+        /// </returns>
         public static BazaProjektow Wczytaj_Baze()
         {
             if (!File.Exists("archive.xml"))
@@ -100,7 +114,9 @@ namespace Backend
             }
             return b;
         }
-
+        /// <summary>
+        /// Metoda zapisująca baze projektów do plików xml w folderze archive
+        /// </summary>
         public void Zapisz_Baze()
         {
             /* XmlSerializer bf= new XmlSerializer(typeof(List<Projekt>));
@@ -156,13 +172,20 @@ namespace Backend
 
 
         }
-
+        /// <summary>
+        /// Metoda dodaje do bazy dany projekt
+        /// </summary>
+        /// <param name="p">Projekt do dodania</param>
         public void DodajDoBazy(Projekt p)
         {
             ilosc_projektow++;
             lista_projektow.Add(p);
         }
-
+        /// <summary>
+        /// Metoda usuwa z bazy dany projekt
+        /// </summary>
+        /// <param name="p">Projekt do usunięcia</param>
+        /// <returns></returns>
         public bool UsunZBazy(Projekt p)
         {
             bool t = false;
@@ -231,7 +254,10 @@ namespace Backend
             return t;
 
         }
-
+        /// <summary>
+        /// Metoda przenosi projekt z bazy projektów do archiwum projektów
+        /// </summary>
+        /// <param name="p">Projekt do przeniesienia</param>
         public void PrzeniesDoArchiwum(Projekt p)
         {
             lista_projektow.Remove(p);
@@ -239,7 +265,15 @@ namespace Backend
             a.ZakonczoneProjekty.Add(p);
             a.ZapiszArchiwum();
         }
-
+        /// <summary>
+        /// Metoda wyszukuje projekty których uczestnikiem jest dany uzytkownik
+        /// </summary>
+        /// <param name="u">Uzytkownik którego projektów szukamy</param>
+        /// <returns>Listę projektów w których uczestniczy uzytkownik
+        /// <see cref="Projekt.listaPracownikow"/>
+        /// <see cref="Projekt.listaSponsorow"/>
+        /// <see cref="Projekt.manager"/>
+        /// </returns>
         public List<Projekt> wyszukajProjekty(Uzytkownik u)
         {
             List<Projekt> k = new List<Projekt>();

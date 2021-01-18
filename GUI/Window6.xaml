@@ -7,6 +7,12 @@
         mc:Ignorable="d"
         Title="ProjektManager" Height="450" Width="800" Background="#545d6a">
     <Grid>
+        <DockPanel Grid.ColumnSpan="3">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="WYLOGUJ" Click="wyloguj"/>
+            </Menu>
+            <StackPanel></StackPanel>
+        </DockPanel>
         <ListBox x:Name="przydzieloneListBox" HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="256" Margin="75,61,0,0" SelectionChanged="przydzieloneListBox_SelectionChanged"/>
         <ListBox x:Name="noweListBox" HorizontalAlignment="Left" Height="90" VerticalAlignment="Top" Width="256" Margin="431,61,0,0"/>
         <Label Foreground="White" FontSize="18" Height="34" Content="Przydzielone zadania&#xD;&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="75,23,0,0" Width="256"/>

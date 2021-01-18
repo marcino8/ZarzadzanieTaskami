@@ -12,6 +12,8 @@
             <ColumnDefinition Width="21*"/>
         </Grid.ColumnDefinitions>
         <Label Foreground="White" FontSize="18" Height="34" Content="Deadline&#xA;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="214,24,0,0" Width="256" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tematBox" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Temat&#xD;&#xA;" VerticalAlignment="Top" Width="350" Margin="214,167,0,0" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="trescBox" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Treść&#xD;&#xA;&#xA;" VerticalAlignment="Top" Width="350" Margin="214,218,0,0" Grid.ColumnSpan="2"/>
         <ComboBox x:Name="listaComboDzien" HorizontalAlignment="Left" VerticalAlignment="Top" Width="59" Margin="214,74,0,0" Height="36" SelectionChanged="ComboBox_SelectionChanged">
             <ComboBoxItem Content="1"/>
             <ComboBoxItem Content="2"/>
@@ -75,8 +77,6 @@
             <ComboBoxItem Content="2033"/>
             <ComboBoxItem Content="2034"/>
         </ComboBox>
-        <TextBox x:Name="tematBox" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Temat&#xD;&#xA;" VerticalAlignment="Top" Width="350" Margin="214,167,0,0" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="trescBox" FontSize="14" Padding="2, 4" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" Text="Treść&#xD;&#xA;&#xA;" VerticalAlignment="Top" Width="350" Margin="214,218,0,0" Grid.ColumnSpan="2"/>
         <ComboBox x:Name="listaCombo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="350" Margin="214,272,0,0" Height="27" SelectionChanged="ComboBox_SelectionChanged" Grid.ColumnSpan="2">
             <ComboBoxItem Content="Mało istotne"/>
             <ComboBoxItem Content="Istotne"/>
