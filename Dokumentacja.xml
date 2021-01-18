@@ -1,0 +1,636 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Backend</name>
+    </assembly>
+    <members>
+        <member name="T:Backend.ArchiwumProjektow">
+            <summary>
+            Klasa przechowywująca zakończone projekty
+            </summary>
+        </member>
+        <member name="F:Backend.ArchiwumProjektow.zakonczoneProjekty">
+            <summary>
+            Lista zakończonych projektów
+            </summary>
+        </member>
+        <member name="M:Backend.ArchiwumProjektow.WczytajArchiwum">
+            <summary>
+            Metoda wczytywująca archiwum z pliku Archiwum.xml
+            </summary>
+            <returns>
+            Zwraca wczytany obiekt klasy ArchiwumProjektow
+            </returns>
+        </member>
+        <member name="M:Backend.ArchiwumProjektow.ZapiszArchiwum">
+            <summary>
+            Metoda zapisująca archiwum do pliku Archiwum.xml
+            </summary>
+        </member>
+        <member name="M:Backend.ArchiwumProjektow.UsunTrwale(Backend.Projekt)">
+            <summary>
+            Metoda usuwająca projekt x z archiwum
+            </summary>
+            <param name="x">
+            Projekt do usunięcia
+            </param>
+        </member>
+        <member name="M:Backend.ArchiwumProjektow.DodajDoArchiwum(Backend.Projekt)">
+            <summary>
+            Metoda dodająca projekt x do archiwum
+            </summary>
+            <param name="x">
+            Projekt który chcemy dodać
+            </param>
+        </member>
+        <member name="T:Backend.BazaKont">
+            <summary>
+            Klasa przechowywująca konta użytkowników
+            </summary>
+        </member>
+        <member name="F:Backend.BazaKont.lista_kont">
+            <summary>
+            Przechowuje wszystkie konta
+            </summary>
+        </member>
+        <member name="M:Backend.BazaKont.Wczytaj_Baze">
+            <summary>
+            Metoda wczytywująca baze kont z pliku userbase.xml
+            </summary>
+            <returns>
+            Zwraca wczytany obiekt klasy BazaKont
+            </returns>
+        </member>
+        <member name="M:Backend.BazaKont.Zapisz_Baze">
+            <summary>
+            Metoda zapisująca bazę użytkowników do pliku xml userbase.xml
+            </summary>
+        </member>
+        <member name="M:Backend.BazaKont.DodajDoBazy(Backend.Konto)">
+            <summary>
+            Metoda dodaje do bazy kont obiekt konto, nie samego uzytkownika
+            </summary>
+            <param name="k">
+            Konto do dodania
+            <see cref="T:Backend.Konto"/>
+            </param>
+        </member>
+        <member name="M:Backend.BazaKont.UsunZBazy(Backend.Konto)">
+            <summary>
+            Metoda usuwa z bazy konto
+            </summary>
+            <param name="k">
+            Konto do usunięcia
+            <see cref="T:Backend.Konto"/>
+            </param>
+        </member>
+        <member name="M:Backend.BazaKont.SprawdzKonto(System.String,System.String)">
+            <summary>
+            Metoda sprawdza czy konto o podanym loginie i hasle znajduje się w bazie kont
+            </summary>
+            <param name="login">
+            Login uzytkownika
+            </param>
+            <param name="password">
+            Hasło użytkownika
+            </param>
+            <returns>
+            true - jeśli konto znaleziono w bazie; 
+            false - jeśli konta nie znaleziono w bazie
+            </returns>
+        </member>
+        <member name="M:Backend.BazaKont.wyciagnijUzytkownika(System.String,System.String)">
+            <summary>
+            Metoda pozwalająca na wyszukanie i otrzymanie Uzytkownika przypisanego do konta z danym loginem i hasłem
+            </summary>
+            <param name="login">Login użytkownika</param>
+            <param name="password">Hasło użytkownika</param>
+            <returns>Obiekt klasy użytkownik, przypisany do konta z loginem login i hasłem password</returns>
+        </member>
+        <member name="M:Backend.BazaKont.wybierzKonta(Backend.Uzytkownik)">
+            <summary>
+            Metoda wybierająca wszystkie konta, gdzie użytkownik jest danego typu
+            </summary>
+            <param name="u">Przykładowy typ użytkownika(Sponsor/Pracownik/Manager)</param>
+            <returns>Lista kont których właściciele są tego samego typu co u</returns>
+        </member>
+        <member name="M:Backend.BazaKont.wybierzOsoby(Backend.Uzytkownik)">
+            <summary>
+            Metoda wybierająca wszystkich użytkowników z bazy kont, gdzie użytkownik jest danego typu
+            </summary>
+            <param name="u">Przykładowy typ użytkownika(Sponsor/Pracownik/Manager)</param>
+            <returns>Lista użytkowników których właściciele są tego samego typu co u</returns>
+        </member>
+        <member name="M:Backend.BazaKont.wybierzOsobyNieWProjekcie(Backend.Uzytkownik,Backend.Projekt)">
+            <summary>
+            Metoda wybierająca wszystkich użytkowników z bazy kont, gdzie użytkownik nie jest członkiem danego projektu
+            </summary>
+            <param name="u">Przykładowy typ użytkownika(Sponsor/Pracownik/Manager)</param>
+            <param name="p">Projekt w którym mają nie uczestniczyć użytkownicy</param>
+            <returns>Listę użytkowników, którzy są w bazie kont, ale nie są w projekcie jako wykonawcy
+            <see cref="F:Backend.Projekt.listaPracownikow"/>
+            </returns>
+        </member>
+        <member name="M:Backend.BazaKont.SprawdzKto(System.String,System.String)">
+            <summary>
+            Sprawdza typ użytkownika skojarzony z danym loginem i hasłem konta
+            </summary>
+            <param name="login">Login do konta</param>
+            <param name="haslo">Hasło do konta</param>
+            <returns>Użytkownik w koncie, które skojarzono z podanym loginem i hasłem</returns>
+        </member>
+        <member name="T:Backend.BazaProjektow">
+            <summary>
+            Klasa przechowywująca aktualne projekty
+            </summary>
+        </member>
+        <member name="F:Backend.BazaProjektow.lista_projektow">
+            <summary>
+            Lista przechowywująca wszystkie aktualne projekty
+            </summary>
+        </member>
+        <member name="F:Backend.BazaProjektow.ilosc_projektow">
+            <summary>
+            Zmienna przechowywująca ilość projektów w bazie
+            </summary>
+        </member>
+        <member name="M:Backend.BazaProjektow.Wczytaj_Baze">
+            <summary>
+            Metoda wczytywująca bazę projektów z Plików xml w folderze archive
+            </summary>
+            <returns>
+            Zwraca wczytany obiekt klasy BazaProjektow
+            </returns>
+        </member>
+        <member name="M:Backend.BazaProjektow.Zapisz_Baze">
+            <summary>
+            Metoda zapisująca baze projektów do plików xml w folderze archive
+            </summary>
+        </member>
+        <member name="M:Backend.BazaProjektow.DodajDoBazy(Backend.Projekt)">
+            <summary>
+            Metoda dodaje do bazy dany projekt
+            </summary>
+            <param name="p">Projekt do dodania</param>
+        </member>
+        <member name="M:Backend.BazaProjektow.UsunZBazy(Backend.Projekt)">
+            <summary>
+            Metoda usuwa z bazy dany projekt
+            </summary>
+            <param name="p">Projekt do usunięcia</param>
+            <returns></returns>
+        </member>
+        <member name="M:Backend.BazaProjektow.PrzeniesDoArchiwum(Backend.Projekt)">
+            <summary>
+            Metoda przenosi projekt z bazy projektów do archiwum projektów
+            </summary>
+            <param name="p">Projekt do przeniesienia</param>
+        </member>
+        <member name="M:Backend.BazaProjektow.wyszukajProjekty(Backend.Uzytkownik)">
+            <summary>
+            Metoda wyszukuje projekty których uczestnikiem jest dany uzytkownik
+            </summary>
+            <param name="u">Uzytkownik którego projektów szukamy</param>
+            <returns>Listę projektów w których uczestniczy uzytkownik
+            <see cref="F:Backend.Projekt.listaPracownikow"/>
+            <see cref="F:Backend.Projekt.listaSponsorow"/>
+            <see cref="F:Backend.Projekt.manager"/>
+            </returns>
+        </member>
+        <member name="T:Backend.Enumy">
+            <summary>
+            Klasa przechowywująca enumy
+            </summary>
+        </member>
+        <member name="T:Backend.Enumy.WaznoscZadania">
+            <summary>
+            Enum dotyczący ważności zadania
+            </summary>
+        </member>
+        <member name="T:Backend.Konto">
+            <summary>
+            Klasa zawierająca login hasło i użytkownika, wykorzystywana w systemie logowania do rozpoznawania użytkowników
+            </summary>
+        </member>
+        <member name="F:Backend.Konto._uzytkownik">
+            <summary>
+            Użytkownik danego konta
+            </summary>
+        </member>
+        <member name="F:Backend.Konto._login">
+            <summary>
+            Login danego konta
+            </summary>
+        </member>
+        <member name="F:Backend.Konto._haslo">
+            <summary>
+            Hasło danego konta
+            </summary>
+        </member>
+        <member name="M:Backend.Konto.#ctor(Backend.Uzytkownik,System.String,System.String)">
+            <summary>
+            Metoda tworząca obiekt klasy Konto
+            </summary>
+            <param name="uzytkownik">Użytkownik</param>
+            <param name="login">login</param>
+            <param name="haslo">hasło</param>
+        </member>
+        <member name="M:Backend.Konto.ToString">
+            <summary>
+            Przeładowanie toString()
+            </summary>
+            <returns>
+            Zwraca login danego użytkownika i informacje o użytkowniku
+            <see cref="M:Backend.Uzytkownik.ToString"/>
+            </returns>
+        </member>
+        <member name="T:Backend.Manager">
+            <summary>
+            Typ użytkownika Manager
+            </summary>
+        </member>
+        <member name="M:Backend.Manager.ToString">
+            <summary>
+            Przeładowanie toString()
+            </summary>
+            <returns>Informacje o użytkowniku
+            <see cref="M:Backend.Uzytkownik.ToString"/></returns>
+        </member>
+        <member name="M:Backend.Manager.Equals(Backend.Uzytkownik)">
+            <summary>
+            Sprawdza czy uzytkownicy są sobie równi
+            </summary>
+            <param name="other">Drugi uzytkownik</param>
+            <returns>
+            true - jeśli imie, nazwisko i pesel są takie same
+            false - w przeciwnym wypadku
+            <see cref="F:Backend.Uzytkownik._imie"/>
+            <see cref="F:Backend.Uzytkownik._nazwisko"/>
+            <see cref="F:Backend.Uzytkownik._pesel"/>
+            </returns>
+        </member>
+        <member name="T:Backend.NieprawidloweRamyCzasoweException">
+            <summary>
+            Klasa wyjątku daty zakonczenia wczesniejszej niz data rozpoczecia projektu
+             </summary>
+        </member>
+        <member name="T:Backend.NotAPeselException">
+            <summary>
+            Klasa wyjątku służąca do sprawdzania czy pesel napewno ma 11 znaków
+            </summary>
+        </member>
+        <member name="T:Backend.Pracownik">
+            <summary>
+            Typ użytkownika Pracownik
+            </summary>
+        </member>
+        <member name="M:Backend.Pracownik.ToString">
+            <summary>
+            Przeładowanie toString()
+            </summary>
+            <returns>Informacje o użytkowniku
+            <see cref="M:Backend.Uzytkownik.ToString"/></returns>
+        </member>
+        <member name="M:Backend.Pracownik.Equals(Backend.Uzytkownik)">
+            <summary>
+            Sprawdza czy uzytkownicy są sobie równi
+            </summary>
+            <param name="other">Drugi uzytkownik</param>
+            <returns>
+            true - jeśli imie, nazwisko i pesel są takie same
+            false - w przeciwnym wypadku
+            <see cref="F:Backend.Uzytkownik._imie"/>
+            <see cref="F:Backend.Uzytkownik._nazwisko"/>
+            <see cref="F:Backend.Uzytkownik._pesel"/>
+            </returns>
+        </member>
+        <member name="T:Backend.Projekt">
+            <summary>
+            Klasa przechowywująca dane dotyczące projektu
+             </summary>
+        </member>
+        <member name="F:Backend.Projekt.nazwa">
+            <summary>
+            Nazwa projektu
+            </summary>
+        </member>
+        <member name="F:Backend.Projekt.opis">
+            <summary>
+            Opis projektu
+            </summary>
+        </member>
+        <member name="F:Backend.Projekt.manager">
+            <summary>
+            Manager zarządzający projektem
+            </summary>
+        </member>
+        <member name="F:Backend.Projekt.listaZadan">
+            <summary>
+            Lista zadań do wykonania w projekcie
+            </summary>
+        </member>
+        <member name="F:Backend.Projekt.wykonaneZadania">
+            <summary>
+            Lista zadań wykonanych już w projekcie
+            </summary>
+        </member>
+        <member name="F:Backend.Projekt.listaPracownikow">
+            <summary>
+            Lista pracowników uczestniczących w projekcie
+            </summary>
+        </member>
+        <member name="F:Backend.Projekt.listaSponsorow">
+            <summary>
+            Lista sponsorów sponsorujących projekt
+            </summary>
+        </member>
+        <member name="M:Backend.Projekt.ToString">
+            <summary>
+            Przeładowanie toString()
+            </summary>
+            <returns>
+            Informacje o projeckie:
+            Managera, temat, oraz treści i tematy zadań
+            <see cref="F:Backend.Projekt.manager"/>
+            <see cref="F:Backend.Projekt.nazwa"/>
+            <see cref="F:Backend.Projekt.listaZadan"/>
+            <see cref="F:Backend.Zadanie._tresc"/>
+            <see cref="P:Backend.Zadanie.Temat"/>
+            </returns>
+        </member>
+        <member name="M:Backend.Projekt.dodajZadanie(Backend.Zadanie)">
+            <summary>
+            Metoda dodaje zadanie do projektu
+            </summary>
+            <param name="z">Zadanie do dodania</param>
+        </member>
+        <member name="M:Backend.Projekt.usunZadanie(Backend.Zadanie)">
+            <summary>
+            Metoda usuwa zadanie z projektu
+            </summary>
+            <param name="z">Zadanie do usunięcia</param>
+        </member>
+        <member name="M:Backend.Projekt.dodajPracownika(Backend.Pracownik)">
+            <summary>
+            Metoda dodaje pracownika do projektu
+            </summary>
+            <param name="p">Pracownik do dodania</param>
+        </member>
+        <member name="M:Backend.Projekt.dodajPracownikow(System.Collections.Generic.List{Backend.Pracownik})">
+            <summary>
+            Metoda dodaje pracowników do projektu
+            </summary>
+            <param name="p">Lista pracowników</param>
+        </member>
+        <member name="M:Backend.Projekt.usunPracownika(Backend.Pracownik)">
+            <summary>
+            Metoda usuwa pracownika z projektu
+            </summary>
+            <param name="p">Pracownik do usunięcia</param>
+        </member>
+        <member name="M:Backend.Projekt.dodajSponsora(Backend.Sponsor)">
+            <summary>
+            Metoda dodaje sponsora do projektu
+            </summary>
+            <param name="s">Sponsor do dodania</param>
+        </member>
+        <member name="M:Backend.Projekt.dodajSponsorow(System.Collections.Generic.List{Backend.Sponsor})">
+            <summary>
+            Metoda dodaje sponsorów do projektu
+            </summary>
+            <param name="p">Lista sponsorów</param>
+        </member>
+        <member name="M:Backend.Projekt.usunSponsora(Backend.Sponsor)">
+            <summary>
+            Metoda Usuwa sponsora z projektu
+            </summary>
+            <param name="s"></param>
+        </member>
+        <member name="M:Backend.Projekt.zadaniaPracownika(Backend.Pracownik)">
+            <summary>
+            Metoda wybiera wszystkie zadania w projekcie w których wykonaniu uczestniczy Pracownik
+            </summary>
+            <param name="p">Pracownik w projekcie</param>
+            <returns>Listę zadań pracownika w projekcie</returns>
+        </member>
+        <member name="M:Backend.Projekt.sortujZadania(System.Collections.Generic.List{Backend.Zadanie})">
+            <summary>
+            Metoda ortuje zadnia wg daty zakonczenia <see cref="F:Backend.Zadanie._czasZakonczenia"/>
+            <see cref="M:Backend.Zadanie.CompareTo(Backend.Zadanie)"/>
+            </summary>
+            <param name="zadania">Lista zadań do posortowania</param>
+        </member>
+        <member name="M:Backend.Projekt.maPracownika(Backend.Pracownik)">
+            <summary>
+            Metoda sprawdza czy w projekcie jest dany pracownik
+            </summary>
+            <param name="p">Pracownik do sprawdzenia</param>
+            <returns>true - jeśli pracownik uczestniczy w projekcie
+            false- jeśli nie uczestniczy
+            <see cref="F:Backend.Projekt.listaPracownikow"/></returns>
+        </member>
+        <member name="M:Backend.Projekt.wybierzPrzydzielone">
+            <summary>
+            Metoda wybiera z projektu zadania które mają wykonawców
+            <see cref="F:Backend.Zadanie._wykonawcy"/>
+            </summary>
+            <returns>Listę zadań nad którymi ktoś pracuje</returns>
+        </member>
+        <member name="M:Backend.Projekt.wybierzNieprzydzielone">
+            <summary>
+            Metoda wybiera z projektu zadania które nie mają wykonawców
+            <see cref="F:Backend.Zadanie._wykonawcy"/>
+            </summary>
+            <returns>Listę zadań nad którymi nikt nie pracuje</returns>
+        </member>
+        <member name="M:Backend.Projekt.wybierzZakonczone">
+            <summary>
+            Metoda wybiera z projektu zakonczone zadania
+            <see cref="F:Backend.Zadanie._wykonane"/>
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Backend.Projekt.Equals(Backend.Projekt)">
+            <summary>
+            metoda sprawdza czy projektu są takie same
+            </summary>
+            <param name="other">Projekt z którym porównujemy</param>
+            <returns>true - jesli nazwy i managerowie projektow są takie same
+            false - w przeciwnym wypadku</returns>
+        </member>
+        <member name="T:Backend.Sponsor">
+            <summary>
+            Typ użytkownika Manager
+            </summary>
+        </member>
+        <member name="M:Backend.Sponsor.ToString">
+            <summary>
+            Przeładowanie toString()
+            </summary>
+            <returns>Informacje o użytkowniku
+            <see cref="M:Backend.Uzytkownik.ToString"/></returns>
+        </member>
+        <member name="M:Backend.Sponsor.Equals(Backend.Uzytkownik)">
+            <summary>
+            Sprawdza czy uzytkownicy są sobie równi
+            </summary>
+            <param name="other">Drugi uzytkownik</param>
+            <returns>
+            true - jeśli imie, nazwisko i pesel są takie same
+            false - w przeciwnym wypadku
+            <see cref="F:Backend.Uzytkownik._imie"/>
+            <see cref="F:Backend.Uzytkownik._nazwisko"/>
+            <see cref="F:Backend.Uzytkownik._pesel"/>
+            </returns>
+        </member>
+        <member name="T:Backend.Uwaga">
+            <summary>
+            Klasa odpowiadająca komentarzom do zadania
+            </summary>
+        </member>
+        <member name="F:Backend.Uwaga._tresc">
+            <summary>
+            Tresc uwagi
+            </summary>
+        </member>
+        <member name="F:Backend.Uwaga._zglaszajacy">
+            <summary>
+            Uzytkownik zgłaszający uwagę
+            </summary>
+        </member>
+        <member name="M:Backend.Uwaga.ToString">
+            <summary>
+            Przeładowanie toString()
+            </summary>
+            <returns>Imie i nazwisko zgłaszającego uzytkownika i tresc uwagi</returns>
+        </member>
+        <member name="T:Backend.Uzytkownik">
+            <summary>
+            Klasa bazowa dla uzytkownika, opisuje wszystkie cechy łączące Sponsora Pracownika i Managera
+            </summary>
+        </member>
+        <member name="F:Backend.Uzytkownik._imie">
+            <summary>
+            Imie uzytkownika
+            </summary>
+        </member>
+        <member name="F:Backend.Uzytkownik._nazwisko">
+            <summary>
+            Nazwisko uzytkownika
+            </summary>
+        </member>
+        <member name="F:Backend.Uzytkownik._dataUrodzenia">
+            <summary>
+            Data urodzenia uzytkownika
+            </summary>
+        </member>
+        <member name="F:Backend.Uzytkownik._pesel">
+            <summary>
+            Pesel uzytkownika
+            </summary>
+        </member>
+        <member name="F:Backend.Uzytkownik._email">
+            <summary>
+            Email uzytkownika
+            </summary>
+        </member>
+        <member name="M:Backend.Uzytkownik.ToString">
+            <summary>
+            Przeładowanie toString()
+            </summary>
+            <returns>Zwraca pełne informacje o uzytkowniku</returns>
+        </member>
+        <member name="M:Backend.Uzytkownik.toShortString">
+            <summary>
+            Metoda wypisuje imie i nazwisko uzytkownika
+            </summary>
+            <returns>Imie i nazwisko uzytkownika</returns>
+        </member>
+        <member name="T:Backend.Zadanie">
+            <summary>
+            Zadanie w projekcie
+            </summary>
+        </member>
+        <member name="F:Backend.Zadanie._czasRozpoczecia">
+            <summary>
+            Czas rozpoczecia zadania
+            </summary>
+        </member>
+        <member name="F:Backend.Zadanie._czasZakonczenia">
+            <summary>
+            Czas zakonczenia zadania
+            </summary>
+        </member>
+        <member name="F:Backend.Zadanie._temat">
+            <summary>
+            Temat zadania
+            </summary>
+        </member>
+        <member name="F:Backend.Zadanie._tresc">
+            <summary>
+            Tresc zadania
+            </summary>
+        </member>
+        <member name="F:Backend.Zadanie._wykonane">
+            <summary>
+            Czy zadanie jest wykonane
+            </summary>
+        </member>
+        <member name="F:Backend.Zadanie._opoznienie">
+            <summary>
+            Czy zadanie ma opoznienie
+            </summary>
+        </member>
+        <member name="F:Backend.Zadanie._waznoscZadania">
+            <summary>
+            Jak wazne jest zadanie
+            <see cref="T:Backend.Enumy.WaznoscZadania"/>
+            </summary>
+        </member>
+        <member name="F:Backend.Zadanie._wykonawcy">
+            <summary>
+            Lista pracownikow pracujacych nad zadaniem
+            </summary>
+        </member>
+        <member name="F:Backend.Zadanie._uwagi">
+            <summary>
+            Lista uwag do zadania
+            </summary>
+        </member>
+        <member name="M:Backend.Zadanie.ToString">
+            <summary>
+            Przeładowanie toString()
+            </summary>
+            <returns>Zwraca informacje o zadaniu jako tekst:
+            temat zadania, tresc zadania, waznosc zadania i date zakonczenia zadania</returns>
+        </member>
+        <member name="M:Backend.Zadanie.ToLongString">
+            <summary>
+            Informacje o zadaniu
+            </summary>
+            <returns>Zwraca informacje o zadaniu jako tekst:
+            temat zadania, tresc zadania, waznosc zadania, date zakonczenia zadania,
+            wszystkich wykonawcow oraz uwagi</returns>
+        </member>
+        <member name="M:Backend.Zadanie.dodajUwage(Backend.Uwaga)">
+            <summary>
+            Metoda dodaje uwagę do zadania
+            </summary>
+            <param name="u">Uwaga do dodania</param>
+        </member>
+        <member name="M:Backend.Zadanie.oznaczJakoZakonczone">
+            <summary>
+            Metoda oznacza zadanie jako wykonane
+            </summary>
+        </member>
+        <member name="M:Backend.Zadanie.CompareTo(Backend.Zadanie)">
+            <summary>
+            Metoda porównuje Zadania względem czasów zakończenia
+            </summary>
+            <param name="other">Zadanie z którym porównujemy</param>
+            <returns>1 - jeśli zadanie z którym porównujemy kończy się później
+            0 - jeśli zadania kończą się tego samego dnia
+            -1 - jeśli zadanie z którym porównujemy kończy się wcześniej</returns>
+        </member>
+    </members>
+</doc>
